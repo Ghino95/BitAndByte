@@ -1,0 +1,79 @@
+%\documentclass[numbers=noenddot, 12pt, a4paper, oneside]{scrbook}%
+\documentclass[12pt, a4paper]{report}
+\usepackage{blindtext}
+\usepackage{fullpage}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\def\Plus{\texttt{+}}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\begin{document}
+
+\begin{titlepage}
+	\centering
+	\vspace{1cm}
+	\vspace{1cm}
+
+	{\scshape\Large Design Document\par}
+	\vspace{1.5cm}
+	{\huge\bfseries Bit\&Byte \par}
+	\vspace{1cm}
+	\vspace{3cm}
+	{\Large\itshape di\par}
+	{\Large\itshape Gianluigi Oliva\par}
+	\vspace{1.5cm}
+	\vfill
+	
+
+
+	\vfill
+
+	% Bottom of the page
+	{\large \today\par}
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\newpage
+
+\chapter{Overview and General Idea}
+A terrible malware infected Tommy’s computer and he cannot use it anymore. When everything seemed to be lost, here it comes: a help from a little hero…a Bit. Our hero will have to travel to the heart of the pc: the kernel, fixing all the bugs caused by the malware and destroy it. Start with the high-level applications, such as a browser, and go on to the operative system to solve various problems. Free the imprisoned programs and ask them to help you during your adventure.\\
+
+This is a 2D puzzle game with cooperative and platforming elements thought for the PC. The stylistic approach of this game is cartoony. The entire game is subdivided in several macro levels with a certain number of levels for each one.
+
+\chapter{Audience and Marketing}
+The game is thought to be played from people of all ages. In fact, the single puzzles have an overall complexity in order to be entertaining for both casual or hardcore gamers. As said before, the graphic style is cartoony and can be appealing for everyone.\\
+The principal competitors of this game are games like “Thomas Was Alone” where there is a strong cooperation factor between the characters, or “Fez” for his puzzle component.
+
+\chapter{Principal Game Mechanics and Gameplay}
+The principal mechanic of this game is the cooperation between the characters, the different level elements and enemies. In particular using the characters’ skills to create combinations and different interactions within the level.
+
+\section*{Basic skills}
+These are the basic skills and mechanics for all the characters that the player can control:
+\begin{itemize}
+	\item \textbf{Walk}: The basic movement action of the characters. It should give a sense of mass and gravity, without slowing down movement.
+	\item \textbf{Jump}: The character should be able to jump but it can be possible to change direction while in air, and gravity should be treated like in the real world. Like for the action of walking, a sense of mass and weight should be present. 
+	I\item \textbf{Interacting} with levers, buttons and boxes: The character should be able to interact with predefined machineries and levers with the usage of a single button.
+\end{itemize}
+\section*{Character’s skills}
+Each character has a particular skill which can be used in different ways to solve a puzzle:
+\begin{itemize}
+\item \textbf{Bitty} (nome da definire): the protagonist and the starting character of the game, he can throw a single bit collected before in a level.
+\item \textbf{Antivirus} (Shieldy, nome da definire): a program who can block enemies from behind (da rifletterci bene)
+\item \textbf{Zippy} (nome da definire): a program who can shrink allies and enemies blocked by Shieldy, but he can also turn them back to their original size.
+\item \textbf{Gimpy} (nome da definire): a program who can camouflage himself to avoid being seen from enemies but he is still tangible (aggiungere idee per interazioni extra)	
+\end{itemize}
+
+
+\chapter{Story and World}
+The entire game is set inside a PC of a young boy, Tommy. Tommy’s PC got infected by a terrible virus which has made the pc unusable and he doesn’t know how to fix this problem. Tommy is unaware of the fact that a single brave bit is going to help him, so he is thinking to erase the disk. The protagonist has little time to destroy the virus but alone he is not enough to stop such a catastrophe, so he needs to find other programs to help him in saving his world. However, the other programs are captured by the virus and the bit needs to find a way to free them.\\
+Inside the PC the world is a pyramidal structure like Dante’s Inferno (aggiungere immagine adatta), starting from the high level applications, going in the operative system level and reaching the kernel level. These macro levels are subdivided in single levels containing a puzzle.
+
+
+
+\end{document}
