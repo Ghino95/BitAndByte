@@ -20,12 +20,16 @@
 	\vspace{1cm}
 
 	{\scshape\Large Design Document\par}
-	\vspace{1.5cm}
-	{\huge\bfseries Bit\&Byte \par}
+	\vspace{0.1cm}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.5\textwidth]{images/Logo}
+	\end{figure}
 	\vspace{1cm}
 	\vspace{3cm}
 	{\Large\itshape di\par}
-	{\Large\itshape Gianluigi Oliva\par}
+	{\Large\itshape Gianluigi Oliva, Francesco Musio, Lucia Ferrari\par}
+	{\Large\itshape Filippo Ghinelli, Leonardo Febbo\par}
 	\vspace{1.5cm}
 	\vfill
 	
@@ -42,13 +46,28 @@
 \newpage
 
 \chapter{Overview and General Idea}
+\section*{Introduction}
 A terrible malware infected Tommy’s computer and he cannot use it anymore. When everything seemed to be lost, here it comes: a help from a little hero…a Bit. Our hero will have to travel to the heart of the pc: the kernel, fixing all the bugs caused by the malware and destroy it. Start with the high-level applications, such as a browser, and go on to the operative system to solve various problems. Free the imprisoned programs and ask them to help you during your adventure.\\
 
 This is a 2D puzzle game with cooperative and platforming elements thought for the PC. The stylistic approach of this game is cartoony. The entire game is subdivided in several macro levels with a certain number of levels for each one.
 
-\chapter{Audience and Marketing}
+\section*{Description}
+Il gioco è suddiviso in una serie di livelli a camera fissa in cui il giocatore dovrà risolvere dei puzzle per arrivare all'uscita. I livelli sono organizzati secondo una struttura piramidale inversa: in cima alla piramide sono presenti i livelli relativi alla parte applicativa di un computer, mentre scendendo si raggiunge il kernel dello stesso.
+
+Il giocatore, oltre al Bit protagonista, potrà controllare altri programmi liberati durante il gioco e fruttare le varie abilità. Nei livelli sono inoltre presenti dei nemici e dei sensori che faranno scattare immediatamente un'allarme in caso di pericolo ed è quindi necessario non farsi avvistare da quest'ultimi. Il giocatore può controllare un solo personaggio per volta, quindi è meglio cambiare il controllo quando tutti i personaggi sono al sicuro. In questo gioco dunque si vengono a mescolare elementi di platforming, di puzzle e elementi co-op.
+
+Per completare ogni livello è necessario che tutti i personaggi arrivino alla porta d'uscita e che siano in possesso della chiave presente nella mappa per aprire la porta.
+
+\section*{Audience and Marketing}
 The game is thought to be played from people of all ages. In fact, the single puzzles have an overall complexity in order to be entertaining for both casual or hardcore gamers. As said before, the graphic style is cartoony and can be appealing for everyone.\\
 The principal competitors of this game are games like “Thomas Was Alone” where there is a strong cooperation factor between the characters, or “Fez” for his puzzle component.
+
+\section*{Genre}
+Platformer, Stealth, Puzzle
+\section*{Platform(s)}
+PC, MacOS
+\section*{Number of Player}
+Single and Multi Player
 
 \chapter{Principal Game Mechanics and Gameplay}
 The principal mechanic of this game is the cooperation between the characters, the different level elements and enemies. In particular using the characters’ skills to create combinations and different interactions within the level.
@@ -60,6 +79,16 @@ These are the basic skills and mechanics for all the characters that the player 
 	\item \textbf{Jump}: The character should be able to jump but it can be possible to change direction while in air, and gravity should be treated like in the real world. Like for the action of walking, a sense of mass and weight should be present. 
 	I\item \textbf{Interacting} with levers, buttons and boxes: The character should be able to interact with predefined machineries and levers with the usage of a single button.
 \end{itemize}
+La perdita di un livello può essere causata dall'individuazione o uccisione di uno dei personaggi da parte dei nemici o sensori. In particolare questo può avvenire:
+\begin{itemize}
+	\item venendo visti da un nemico "camera"
+	\item passando attraverso un sensore laser
+	\item venendo colpiti da un attacco Melee
+	\item cadendo in delle trappole
+\end{itemize}
+
+
+
 \section*{Character’s skills}
 Each character has a particular skill which can be used in different ways to solve a puzzle:
 \begin{itemize}
@@ -69,11 +98,38 @@ Each character has a particular skill which can be used in different ways to sol
 \item \textbf{Gimpy} (nome da definire): a program who can camouflage himself to avoid being seen from enemies but he is still tangible (aggiungere idee per interazioni extra)	
 \end{itemize}
 
+\section*{Enemys' skills}
+\section*{Camera}
+Poiché il gioco si basa sulla risoluzione di puzzle, il giocatore deve avere sempre una visione completa della mappa e per fare ciò viene usata una camera statica che mostra sempre l'intero livello e posizionata ad una distanza fissa.\\
+Ogni volta che il giocatore termina un livello la camera mostrerà immediatamente il livello successivo, intervallato da piccole cutscene. La camera non sarà statica solo durante la fase di tutorial costituita da un livello a scorrimento in cui il giocatore farà esperienza con tutte le meccaniche di base.
+
+\section*{Hazards}
+Nei livelli di gioco i principali pericoli che si possono trovare sono:
+\begin{itemize}
+	\item \textbf{Laser}: I laser uccidono chiunque lo tocchi. Alcuni laser sono fissi, mentre altri possono ruotare o di default o mediante l'interazione con un terminale. I laser inoltre non possono essere disattivati. Questi vengono generati da un emettitore posizionato sui muri. Inoltre i laser non hanno effetto su tutto ciò che non sia un personaggio o un nemico.
+	\item \textbf{Spikes}: Gli spuntoni generalmente sono posizionati in delle fosse e uccidono chiunque ci salti sopra. Tuttavia è possibile posiziona degli oggetti per poterci saltare sopra.
+\end{itemize}
+
+\section*{Machineries}
+I principali meccanismi attivabili nei livelli sono:
+\begin{itemize}
+	\item \textbf{Buttons}: I bottoni permettono di attivare determinati meccanismi. Una volta attivati non si possono più disattivare. I bottoni sono attivabili da qualsiasi cosa sia tangibile, quindi sia dai vari personaggi che anche da oggetti.
+	\item \textbf{Moving Platform}: Le piattaforme in movimento possono trasportare tutto ciò che si trova su di loro. Alcune piattaforme sono già attivate, mentre altre lo diventano a seguito dell'attivazione di un bottone.
+	\item \textbf{Barriers}: Le barriere vengono usate per rendere delle zone inaccessibili. Mediante l'attivazione di un bottone queste barriere possono essere disattivate scendendo nel terreno.
+	\item \textbf{Terminal}: I terminali sono simili ai bottoni, con la differenza che possono essere attivati e disattivati. Mediante essi ad esempio è possibile cambiare la direzione di un laser.
+	\item \textbf{Wire}: I fili sono utilizzabili sono dal Bitty e permettono a quest'ultimo di attraversarli per poter essere trasportato dall'altro capo di esso.
+\end{itemize}
+
+\section*{Control System}
+Poiché alcuni enigmi sono basati sulla fisica anche il movimento si basa su ciò. Il control system inoltre si occupa dello cambio del personaggio controllato garantendo che in ogni momento il giocatore possa gestire un solo personaggio per volta. Per far capire al giocatore quale personaggio sta controllando in quel momento, esso attiva anche un indicatore UI per indicarlo. Il giocatore inoltre può controllare anche eventuali programmi imprigionati, anche se gli sarà permesso fare solo piccoli movimenti.
+
+
 
 \chapter{Story and World}
 The entire game is set inside a PC of a young boy, Tommy. Tommy’s PC got infected by a terrible virus which has made the pc unusable and he doesn’t know how to fix this problem. Tommy is unaware of the fact that a single brave bit is going to help him, so he is thinking to erase the disk. The protagonist has little time to destroy the virus but alone he is not enough to stop such a catastrophe, so he needs to find other programs to help him in saving his world. However, the other programs are captured by the virus and the bit needs to find a way to free them.\\
 Inside the PC the world is a pyramidal structure like Dante’s Inferno (aggiungere immagine adatta), starting from the high level applications, going in the operative system level and reaching the kernel level. These macro levels are subdivided in single levels containing a puzzle.
 
-
+\chapter{Art Overview}
+\chapter{Sound Overview}
 
 \end{document}
