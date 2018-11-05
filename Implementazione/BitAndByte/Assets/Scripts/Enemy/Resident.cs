@@ -11,16 +11,18 @@ public class Resident : InterfaceDisable {
     private RaycastHit2D hit;
     public SpriteRenderer luce;
     private PolygonCollider2D col;
+    private bool active;
 
     private void Awake()
     {
         tr = GetComponent<Transform>();
         col = GetComponent<PolygonCollider2D>();
+        active = true;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player")){
+        if(collision.CompareTag("Player") && active){
             /*hit = Physics2D.Raycast(tr.position, collision.gameObject.transform.position - tr.position, 5.0f, Target);
             if(hit.collider != null && hit.collider.CompareTag("Player")){
                 print("GameOver");
@@ -32,14 +34,13 @@ public class Resident : InterfaceDisable {
     public override void ChangeState()
     {
         luce.enabled = !luce.enabled;
-        col.enabled = !col.enabled;
-        print("luce: " + luce.enabled + " collider: " + col.enabled);
+        active = !active;
     }
 
     public override void ActiveVirus()
     {
         luce.enabled = true;
-        col.enabled = true;
+        active = !active;
     }
 
 
