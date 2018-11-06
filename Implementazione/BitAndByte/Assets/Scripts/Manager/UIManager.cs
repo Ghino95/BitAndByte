@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour {
+public class UIManager : MonoBehaviour {
 
-    public static GameManager instance
+    public static UIManager instance
     {
         get;
         private set;
     }
+
+    public GameObject KeyImage;
+
 
     private void Awake()
     {
@@ -21,15 +24,11 @@ public class GameManager : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+        EventManager.StartListening("CatchKey",CatchKey);
     }
 
-    private void Update()
-    {
-
+    private void CatchKey(){
+        KeyImage.SetActive(true);
     }
-
-
-
-
 
 }

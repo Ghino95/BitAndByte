@@ -24,7 +24,7 @@ public class Laser : MonoBehaviour {
         if(hit.collider != null){
             Line.SetPosition(1, hit.point);
             if(hit.collider.CompareTag("Player")){
-                //GameOver
+                EventManager.TriggerEvent("GameOver");
             }
 
         }

@@ -27,7 +27,7 @@ public class Resident : InterfaceDisable {
             if(hit.collider != null && hit.collider.CompareTag("Player")){
                 print("GameOver");
             }*/
-            print("GameOver");
+            EventManager.TriggerEvent("GameOver");
         }
     }
 

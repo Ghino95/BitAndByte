@@ -73,6 +73,9 @@ public class Spider : InterfaceDisable{
             StopCoroutine("Move");
             idle = true;
         }
+        if(collision.CompareTag("Player")){
+            EventManager.TriggerEvent("GameOver");
+        }
     }
 
     public override void ChangeState()
