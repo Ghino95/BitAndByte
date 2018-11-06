@@ -14,18 +14,7 @@ public class ControllerManager: MonoBehaviour
     public List<DisablePlayer> players;
     private int playerEnable = 0;
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+
 
     private void Start()
     {
@@ -46,11 +35,5 @@ public class ControllerManager: MonoBehaviour
         }
         
     }
-
-
-
-
-
-
 
 }

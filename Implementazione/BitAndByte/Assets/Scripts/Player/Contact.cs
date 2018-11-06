@@ -11,7 +11,7 @@ public class Contact : MonoBehaviour
         parent = transform.parent.gameObject.GetComponent<ControlPlayer>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         parent.grounded = true;
     }
