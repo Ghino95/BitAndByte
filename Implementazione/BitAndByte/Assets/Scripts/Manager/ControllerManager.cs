@@ -10,6 +10,10 @@ public class ControllerManager: MonoBehaviour
         private set;
     }
 
+    private void Awake()
+    {
+        instance = this;
+    }
 
     public List<DisablePlayer> players;
     private int playerEnable = 0;
@@ -28,15 +32,25 @@ public class ControllerManager: MonoBehaviour
     //magari uso EventManager per mandare il messaggio del cambio player
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.C)){
+
+        if(Input.GetButtonDown("Swap")){
             players[playerEnable].Disable();
             playerEnable = (playerEnable +1) % players.Count;
             players[playerEnable].Enable();
         }
-        if(Input.GetKeyDown(KeyCode.Alpha1)){
-            UIManager.instance.OpenMenuPause();
+        if(Input.GetButtonDown("Pause")){
+            PausePlayer();
+            EventManager.TriggerEvent("Pause");
         }
         
+    }
+
+    public void PausePlayer(){
+        players[playerEnable].Disable();
+    }
+
+    public void ResumePlayer(){
+        players[playerEnable].Enable();
     }
 
 }

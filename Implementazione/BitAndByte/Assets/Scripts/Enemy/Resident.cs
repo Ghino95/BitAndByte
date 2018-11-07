@@ -7,16 +7,16 @@ public class Resident : InterfaceDisable {
     [Header("Layer Visibili")]
     public LayerMask Target;
 
-    private Transform tr;
+    //private Transform tr;
     private RaycastHit2D hit;
     public SpriteRenderer luce;
-    private PolygonCollider2D col;
+    //private PolygonCollider2D col;
     private bool active;
 
     private void Awake()
     {
-        tr = GetComponent<Transform>();
-        col = GetComponent<PolygonCollider2D>();
+        //tr = GetComponent<Transform>();
+        //col = GetComponent<PolygonCollider2D>();
         active = true;
     }
 

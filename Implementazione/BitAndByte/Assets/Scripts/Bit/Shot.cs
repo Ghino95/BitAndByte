@@ -20,7 +20,7 @@ public class Shot: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(HaveBit && Input.GetKeyDown(KeyCode.Tab)){
+        if(HaveBit && Input.GetButtonDown("Fire1")){
             if(!spriteRenderer.flipX){
                 Instantiate(shot, dx.position, dx.rotation);
             }else{

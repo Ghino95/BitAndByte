@@ -12,7 +12,7 @@ public class ShildyPower : MonoBehaviour {
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q) && CanActive){
+        if(Input.GetButtonDown("ActivePower") && CanActive){
             enemy.ChangeState();
         }
     }
