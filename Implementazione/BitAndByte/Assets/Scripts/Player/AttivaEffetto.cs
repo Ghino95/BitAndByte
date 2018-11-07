@@ -8,7 +8,7 @@ public class AttivaEffetto : MonoBehaviour {
 
     private void Update()
     {
-        if(obj != null && Input.GetKeyDown(KeyCode.Q)){
+        if(obj != null && Input.GetButtonDown("ActivePower")){
             obj.PerformEffect(gameObject);
         }
     }

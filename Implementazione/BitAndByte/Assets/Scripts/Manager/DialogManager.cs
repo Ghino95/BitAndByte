@@ -24,13 +24,14 @@ public class DialogManager : MonoBehaviour {
 
     private void Awake()
     {
+        instance = this;
         EventManager.StartListening("OpenJail",StartDialog);
         instaceBaloon = null;
     }
 
     private void Update()
     {
-        if(instaceBaloon != null && Input.GetKeyDown(KeyCode.P)){
+        if(instaceBaloon != null && Input.GetButtonDown("Jump")){
             NextImage();
         }
     }
@@ -39,6 +40,7 @@ public class DialogManager : MonoBehaviour {
 
     void StartDialog(){
         Time.timeScale = 0;
+        ControllerManager.instance.PausePlayer();
         instaceBaloon = Instantiate(Baloon);
         instaceBaloon.transform.SetParent(can.transform, false);
         instaceBaloon.transform.SetPositionAndRotation(NPC.transform.position + new Vector3(2,2,0), Quaternion.identity);
@@ -59,6 +61,7 @@ public class DialogManager : MonoBehaviour {
             Destroy(instaceBaloon);
             instaceBaloon = null;
             Time.timeScale = 1;
+            ControllerManager.instance.ResumePlayer();
         }
     }
 

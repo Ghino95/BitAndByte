@@ -34,7 +34,9 @@ public class ControlPlayer : MonoBehaviour {
 
         rig.velocity = move;
 
-        if (Input.GetKey(KeyCode.Space) && grounded)
+
+
+        if (Input.GetButtonDown("Jump") && grounded)
         {
             rig.velocity = new Vector2(rig.velocity.x, jumpForce);
         }
