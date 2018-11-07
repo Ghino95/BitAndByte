@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class EventManager : MonoBehaviour {
 
-	private Dictionary <string, UnityEvent> eventDictionary;
+    private Dictionary <string, UnityEvent> eventDictionary;
 
 	private static EventManager eventManager;
 
@@ -26,8 +26,7 @@ public class EventManager : MonoBehaviour {
 					eventManager.Init (); 
 				}
 			}
-
-			return eventManager;
+            return eventManager;
 		}
 	}
 
@@ -35,7 +34,8 @@ public class EventManager : MonoBehaviour {
 	{
 		if (eventDictionary == null)
 		{
-			eventDictionary = new Dictionary<string, UnityEvent>();
+            DontDestroyOnLoad(gameObject);
+            eventDictionary = new Dictionary<string, UnityEvent>();
 		}
 	}
 

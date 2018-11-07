@@ -22,16 +22,17 @@ public class GameManager : MonoBehaviour {
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            EventManager.StartListening("CatchKey", CatchKey);
+            EventManager.StartListening("AllPlayerExit", WinLevel);
+            EventManager.StartListening("GameOver", ResetLevel);
+            EventManager.StartListening("Exit", GoMenu);
         }
         else
         {
             Destroy(gameObject);
         }
-        EventManager.StartListening("CatchKey",CatchKey);
-        EventManager.StartListening("AllPlayerExit",WinLevel);
-        EventManager.StartListening("GameOver", ResetLevel);
-        EventManager.StartListening("Exit", GoMenu);
     }
+
 
 
     private void CatchKey(){

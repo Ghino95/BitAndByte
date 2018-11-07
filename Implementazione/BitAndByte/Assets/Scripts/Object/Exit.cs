@@ -36,4 +36,9 @@ public class Exit : MonoBehaviour {
     private void OpenGate(){
         Anim.SetTrigger("Open");
     }
+
+    private void OnDestroy()
+    {
+        EventManager.StopListening("CatchKey", OpenGate);
+    }
 }

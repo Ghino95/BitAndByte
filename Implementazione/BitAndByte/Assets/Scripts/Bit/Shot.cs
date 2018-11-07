@@ -6,6 +6,9 @@ public class Shot: MonoBehaviour
 
     private bool HaveBit;
     private SpriteRenderer spriteRenderer;
+
+    private ParticleSystem effect;
+
     public GameObject shot;
     public Transform dx;
     public Transform sx;
@@ -13,6 +16,7 @@ public class Shot: MonoBehaviour
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        effect = GetComponent<ParticleSystem>();
         HaveBit = false;
     }
 
@@ -27,12 +31,15 @@ public class Shot: MonoBehaviour
                 Instantiate(shot, sx.position, sx.rotation);
             }
             HaveBit = false;
+            effect.Pause();
+            effect.Clear();
         }
 
     }
 
     public void EnableBit(){
         HaveBit = true;
+        effect.Play();
         //aggiungere effetto grafico
     }
 }
