@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour {
     }
 
     public GameObject KeyImage;
+    public GameObject MenuPause;
 
 
     private void Awake()
@@ -29,6 +30,28 @@ public class UIManager : MonoBehaviour {
 
     private void CatchKey(){
         KeyImage.SetActive(true);
+    }
+
+    public void Resume()
+    {
+        Time.timeScale = 1;
+        MenuPause.SetActive(false);
+    }
+
+    public void Restart(){
+        Time.timeScale = 1;
+        EventManager.TriggerEvent("GameOver");
+    }
+
+    public void Menu(){
+        Time.timeScale = 1;
+        EventManager.TriggerEvent("Exit");
+    }
+
+    public void OpenMenuPause()
+    {
+        Time.timeScale = 0;
+        MenuPause.SetActive(true);
     }
 
 }

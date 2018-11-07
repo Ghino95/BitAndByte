@@ -33,6 +33,9 @@ public class ControllerManager: MonoBehaviour
             playerEnable = (playerEnable +1) % players.Count;
             players[playerEnable].Enable();
         }
+        if(Input.GetKeyDown(KeyCode.Alpha1)){
+            UIManager.instance.OpenMenuPause();
+        }
         
     }
 

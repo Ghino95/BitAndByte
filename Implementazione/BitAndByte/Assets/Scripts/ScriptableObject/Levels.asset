@@ -11,5 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a21cb66a4d4194b729aa4ca02e71ff21, type: 3}
   m_Name: Levels
   m_EditorClassIdentifier: 
+  Menu: MainMenu
   levels:
   - Level1

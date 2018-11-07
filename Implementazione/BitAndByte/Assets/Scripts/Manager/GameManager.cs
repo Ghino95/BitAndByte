@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour {
     }
 
     private bool HaveKey;
-    private int CurrentScene;
 
     public GameFlow scenes;
 
@@ -28,10 +27,10 @@ public class GameManager : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-        CurrentScene = 0;
         EventManager.StartListening("CatchKey",CatchKey);
         EventManager.StartListening("AllPlayerExit",WinLevel);
         EventManager.StartListening("GameOver", ResetLevel);
+        EventManager.StartListening("Exit", GoMenu);
     }
 
 
@@ -41,22 +40,18 @@ public class GameManager : MonoBehaviour {
 
     private void WinLevel(){
         if(HaveKey){
-            if(CurrentScene < (scenes.NumberOfScene() - 1)){
-                CurrentScene++;
-                SceneManager.LoadScene(scenes.GetLevel(CurrentScene));
-            }
+            SceneManager.LoadScene(scenes.GoToNextLevel());
         }
 
     }
 
     private void ResetLevel()
     {
-        SceneManager.LoadScene(scenes.GetLevel(CurrentScene));
+        SceneManager.LoadScene(scenes.GetCurrentLevel());
     }
 
-    public void GoToLevel(int scene){
-        SceneManager.LoadScene(scenes.GetLevel(scene));
-        CurrentScene = scene;
+    private void GoMenu(){
+        SceneManager.LoadScene(scenes.MainMenu());
     }
 
 
