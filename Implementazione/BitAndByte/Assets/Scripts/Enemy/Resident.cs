@@ -7,26 +7,20 @@ public class Resident : InterfaceDisable {
     [Header("Layer Visibili")]
     public LayerMask Target;
 
-    //private Transform tr;
     private RaycastHit2D hit;
     public SpriteRenderer luce;
-    //private PolygonCollider2D col;
     private bool active;
+
+    private Coroutine Risveglio;
 
     private void Awake()
     {
-        //tr = GetComponent<Transform>();
-        //col = GetComponent<PolygonCollider2D>();
         active = true;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.CompareTag("Player") && active){
-            /*hit = Physics2D.Raycast(tr.position, collision.gameObject.transform.position - tr.position, 5.0f, Target);
-            if(hit.collider != null && hit.collider.CompareTag("Player")){
-                print("GameOver");
-            }*/
             EventManager.TriggerEvent("GameOver");
         }
     }
@@ -39,8 +33,25 @@ public class Resident : InterfaceDisable {
 
     public override void ActiveVirus()
     {
+        if(Risveglio == null){
+            Risveglio = StartCoroutine(Reactive());
+        }
+
+    }
+
+    public override void EnterZone()
+    {
+        if(Risveglio != null){
+            StopCoroutine(Risveglio);
+            Risveglio = null;
+        }
+    }
+
+    private IEnumerator Reactive(){
+        yield return new WaitForSeconds(5.0f);
         luce.enabled = true;
         active = !active;
+        Risveglio = null;
     }
 
 

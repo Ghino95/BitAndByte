@@ -29,7 +29,6 @@ public class ControllerManager: MonoBehaviour
         
     }
 
-    //magari uso EventManager per mandare il messaggio del cambio player
     private void Update()
     {
 

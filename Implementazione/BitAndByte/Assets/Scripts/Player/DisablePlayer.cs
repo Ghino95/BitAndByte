@@ -5,6 +5,7 @@ using UnityEngine;
 public class DisablePlayer : MonoBehaviour {
 
     private List<MonoBehaviour> scripts;
+    private Rigidbody2D rig;
 
     private void Awake()
     {
@@ -12,6 +13,7 @@ public class DisablePlayer : MonoBehaviour {
         scripts.AddRange(GetComponents<MonoBehaviour>());
         scripts.AddRange(GetComponentsInChildren<MonoBehaviour>());
         scripts.Remove(this);
+        rig = GetComponent<Rigidbody2D>();
     }
 
     public void Disable()
@@ -19,6 +21,7 @@ public class DisablePlayer : MonoBehaviour {
         foreach(MonoBehaviour script in scripts){
             script.enabled = false;
         }
+        rig.drag = 10.0f;
     }
 
     public void Enable()
@@ -27,6 +30,7 @@ public class DisablePlayer : MonoBehaviour {
         {
             script.enabled = true;
         }
+        rig.drag = 0.0f;
     }
 
 }

@@ -3,19 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogManager : MonoBehaviour {
-
-    public static DialogManager instance
-    {
-        get;
-        private set;
-    }
+public class DialogManager : MonoBehaviour
+{
 
     public GameObject NPC;
     public GameObject can;
     public GameObject Baloon;
     public GameObject EmptyImage;
-    public Sprite[] Contenuto;
+    //public Sprite[] Contenuto;
+
+    public DiagolImages Images;
 
     private int count;
     private Image Current;
@@ -24,44 +21,53 @@ public class DialogManager : MonoBehaviour {
 
     private void Awake()
     {
-        instance = this;
-        EventManager.StartListening("OpenJail",StartDialog);
+        EventManager.StartListening("OpenJail", StartDialog);
         instaceBaloon = null;
     }
 
     private void Update()
     {
-        if(instaceBaloon != null && Input.GetButtonDown("Jump")){
+        if (instaceBaloon != null && Input.GetButtonDown("Jump"))
+        {
             NextImage();
         }
     }
 
 
 
-    void StartDialog(){
+    void StartDialog()
+    {
         Time.timeScale = 0;
+        count = 0;
         ControllerManager.instance.PausePlayer();
         instaceBaloon = Instantiate(Baloon);
         instaceBaloon.transform.SetParent(can.transform, false);
-        instaceBaloon.transform.SetPositionAndRotation(NPC.transform.position + new Vector3(2,2,0), Quaternion.identity);
+        instaceBaloon.transform.SetPositionAndRotation(NPC.transform.position + new Vector3(2, 2, 0), Quaternion.identity);
+
 
         GameObject instaceEmptyImage = Instantiate(EmptyImage);
         instaceEmptyImage.transform.SetParent(instaceBaloon.transform, false);
         Current = instaceEmptyImage.GetComponent<Image>();
         Current.preserveAspect = true;
-        Current.sprite = Contenuto[count];
-        count++;
+        NextImage();
     }
 
-    void NextImage(){
-        if(count < Contenuto.Length){
-            Current.sprite = Contenuto[count];
+    void NextImage()
+    {
+
+        Sprite image = Images.GetImagesNumber(count);
+
+        if (image != null)
+        {
+            Current.sprite = image;
             count++;
-        }else{
+        }
+        else
+        {
             Destroy(instaceBaloon);
-            instaceBaloon = null;
             Time.timeScale = 1;
             ControllerManager.instance.ResumePlayer();
+            EventManager.StopListening("OpenJail", StartDialog);
         }
     }
 

@@ -11,4 +11,8 @@ public class InterfaceDisable : MonoBehaviour {
     virtual public void ActiveVirus(){
 
     }
+
+    virtual public void EnterZone(){
+
+    }
 }

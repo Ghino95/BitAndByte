@@ -33,27 +33,26 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-
-
     private void CatchKey(){
         HaveKey = true;
     }
 
     private void WinLevel(){
         if(HaveKey){
-            SceneManager.LoadScene(scenes.GoToNextLevel());
+            SceneManager.LoadScene(scenes.GoToNextLevel(SceneManager.GetActiveScene().name));
         }
 
     }
 
     private void ResetLevel()
     {
-        SceneManager.LoadScene(scenes.GetCurrentLevel());
+        SceneManager.LoadScene(scenes.GetCurrentLevel(SceneManager.GetActiveScene().name));
     }
 
     private void GoMenu(){
         SceneManager.LoadScene(scenes.MainMenu());
     }
+
 
 
 

@@ -5,42 +5,33 @@ using UnityEngine;
 public class ShildyPower : MonoBehaviour {
 
 
-    private InterfaceDisable enemy;
+    private GameObject enemy;
     private bool CanActive = false;
-    private bool BoolTest = false;
-
 
     private void Update()
     {
         if(Input.GetButtonDown("ActivePower") && CanActive){
-            enemy.ChangeState();
+            enemy.GetComponent<InterfaceDisable>().ChangeState();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy")){
-            enemy = collision.gameObject.GetComponent<InterfaceDisable>();
+        if (collision.CompareTag("Enemy") && enemy == null){
+            enemy = collision.gameObject;
+            enemy.GetComponent<InterfaceDisable>().EnterZone();
             CanActive = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.gameObject == enemy)
         {
             CanActive = false;
-            if(!BoolTest){
-                BoolTest = true;
-                Invoke("Restore", 5.0f);
-            }
+            enemy.GetComponent<InterfaceDisable>().ActiveVirus();
+            enemy = null;
         }
-    }
-
-    private void Restore(){
-        enemy.ActiveVirus();
-        enemy = null;
-        BoolTest = false;
     }
 
 }

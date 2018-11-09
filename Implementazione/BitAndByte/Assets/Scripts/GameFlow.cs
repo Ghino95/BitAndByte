@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,19 +8,18 @@ public class GameFlow : ScriptableObject {
 
     public string Menu;
     public string[] levels;
-    private int currentLevel;
 
-    public GameFlow(){
-        currentLevel = 0;
+
+    public string GetCurrentLevel(string currentScene){
+        int index = Array.FindIndex(levels,(string obj) => obj == currentScene);
+        return levels[index];
     }
 
-    public string GetCurrentLevel(){
-        return levels[currentLevel];
-    }
-
-    public string GoToNextLevel(){
-        currentLevel++;
-        return currentLevel == levels.Length ? Menu : levels[currentLevel];
+    public string GoToNextLevel(string currentScene)
+    {
+        int index = Array.FindIndex(levels, (string obj) => obj == currentScene);
+        index++;
+        return index >= levels.Length ? Menu : levels[index];
     }
 
     public string MainMenu(){

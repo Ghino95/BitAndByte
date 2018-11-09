@@ -11,6 +11,7 @@ public class OpenGate : MonoBehaviour {
         if(collision.CompareTag("Player")){
             EventManager.TriggerEvent("OpenJail");
             Prison.tag = "Player";
+            Destroy(gameObject);
         }
     }
 

@@ -14,7 +14,7 @@ public class Spider : InterfaceDisable{
     private Vector2 direction;
     private bool idle;
     private bool disable;
-
+    private Coroutine Risveglio;
     private readonly float velocity = 0.3f;
 
     private void Awake()
@@ -70,7 +70,6 @@ public class Spider : InterfaceDisable{
     {
         if (collision.CompareTag("BitShot"))
         {
-            StopCoroutine("Move");
             idle = true;
         }
         if(collision.CompareTag("Player")){
@@ -85,7 +84,26 @@ public class Spider : InterfaceDisable{
 
     public override void ActiveVirus()
     {
+        if (Risveglio == null)
+        {
+            Risveglio = StartCoroutine(Reactive());
+        }
+    }
+
+    public override void EnterZone()
+    {
+        if (Risveglio != null)
+        {
+            StopCoroutine(Risveglio);
+            Risveglio = null;
+        }
+    }
+
+    private IEnumerator Reactive()
+    {
+        yield return new WaitForSeconds(5.0f);
         disable = false;
+        Risveglio = null;
     }
 
 
