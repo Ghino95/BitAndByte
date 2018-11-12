@@ -2,4 +2,4 @@
 \contentsline {chapter}{\numberline {2}Principal Game Mechanics and Gameplay}{4}{chapter.2}
 \contentsline {chapter}{\numberline {3}Story and World}{8}{chapter.3}
 \contentsline {chapter}{\numberline {4}Art Overview}{9}{chapter.4}
-\contentsline {chapter}{\numberline {5}Sound Overview}{10}{chapter.5}
+\contentsline {chapter}{\numberline {5}Sound Overview}{11}{chapter.5}

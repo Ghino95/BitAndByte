@@ -115,8 +115,10 @@ There are different enemies in the game, each one representing the different kin
 
 
 \section*{Camera}
-Since the game is based on puzzle resolution, the player must always have a complete view of the map, so a static camera is used which always shows the entire level and it's positioned at a fixed distance.\\
-Each time the player finishes a level the camera will show the next level, after a small cutscene. The camera will not be static only during the tutorial phase, which consists of a sliding level in which the player will experience all the basic mechanics.
+%Since the game is based on puzzle resolution, the player must always have a complete view of the map, so a static camera is used which always shows the entire level and it's positioned at a fixed distance.\\
+%Each time the player finishes a level the camera will show the next level, after a small cutscene. The camera will not be static only during the tutorial phase, which consists of a sliding level in which the player will experience all the basic mechanics.
+
+Essendo il gioco basato su la risoluzione dei puzzle, la camera mostrerà una grande porzione dell'ambiente in modo tale da avere sullo schermo tutti gli elementi necessari per risolvere gli enigmi. La camera si focalizzerà sul personaggio attualmente in uso e al cambio di esso la camera si sposterà in maniera smooth. Ad ogni cambio di livello verranno mostrate delle piccole cutscene riguardanti la trama e non necessarie per la risoluzione dei vari puzzle.
 
 \section*{Hazards}
 In the levels of the game, the principal dangers which can be found are:
@@ -145,9 +147,32 @@ Since some puzzles are physics-based, the movement is also based on it. The cont
 The entire game is set inside a PC of a young boy, Tommy. Tommy’s PC got infected by a terrible virus which has made the pc unusable and he doesn’t know how to fix this problem. Tommy is unaware of the fact that a single brave bit is going to help him, so he is thinking to erase the disk. The protagonist has little time to destroy the virus but alone he is not enough to stop such a catastrophe, so he needs to find other programs to help him in saving his world. However, the other programs are captured by the virus and the bit needs to find a way to free them.\\
 Inside the PC the world is a pyramidal structure like Dante’s Inferno (aggiungere immagine adatta), starting from the high level applications, going in the operative system level and reaching the kernel level. These macro levels are subdivided in single levels containing a puzzle.
 
+\section*{Characters}
+Ogni personaggio ha la propria personalità:
+\begin{itemize}
+\item \textbf{Bitty}: Un piccolo bit molto determinato, con un fortissimo senso della giustizia, ma di poche parole. A lui piace agire anzichè parlare.
+\item \textbf{Shieldy}: Un programma molto iracondo e tende a prendere fuoco quando è in pericolo... diventando un firewall.
+\item \textbf{Zippy}: Un programma timido e che soffre di claustrofobia. Durante gli attacchi di panico infatti si rimpicciolisce per sentirsi più a suo agio
+\item \textbf{Gimpy}: Chi l'ha detto che i programmi sono tutti maschi? È un programma di una certa età, ma grazie alle sue grandi doti di ritocco sembra essere più giovane. Frizzante e dinamica che mantiene sempre l'umore alto con i suoi fotomontaggi
+\end{itemize}
+
 \chapter{Art Overview}
 Graphically, the levels should be invoke the idea of being inside the virtual world of a pc, having texture of string of bits and tron-like features like neon colors and lines around to represent the circuits of a pc.
-The protagonist and his allies are drawn as rectangles, each one having features typical of the program they represent in their textures. They have a cartoonish style with cute faces and rounded edges. The enemies are also drawn with a cartoonish style, but they have a menacing feeling when you look at them by having angry faces and other features like edgy edges.
+The protagonist and his allies are drawn as rectangles, each one having features typical of the program they represent in their textures. They have a cartoonish style with cute faces and rounded edges. The enemies are also drawn with a cartoonish style, but they have a menacing feeling when you look at them by having angry faces and other features like edgy edges.\\
+\section*{Sketch and Characters Design}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/Characters}
+\end{figure}
+	\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/Enemy}
+\end{figure}
+	\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\textwidth]{images/Bits}
+\end{figure}
+
 
 \chapter{Sound Overview}
 The background music should be taken from the trance genre (or something similar), avoiding too much powerful tracks but looking for some more relaxing ones. This genre should be perfect to make the player feeling to be in a virtual world and to improve his focus on solving the puzzles.
