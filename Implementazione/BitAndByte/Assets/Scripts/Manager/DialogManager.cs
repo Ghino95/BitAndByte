@@ -6,22 +6,25 @@ using UnityEngine.UI;
 public class DialogManager : MonoBehaviour
 {
 
-    public GameObject NPC;
     public GameObject can;
     public GameObject Baloon;
     public GameObject EmptyImage;
-    //public Sprite[] Contenuto;
 
-    public DiagolImages Images;
-
+    private DiagolImages Images;
+    private GameObject NPC;
     private int count;
     private Image Current;
     private GameObject instaceBaloon;
 
+    public static DialogManager instance
+    {
+        get;
+        private set;
+    }
 
     private void Awake()
     {
-        EventManager.StartListening("OpenJail", StartDialog);
+        instance = this;
         instaceBaloon = null;
     }
 
@@ -35,8 +38,11 @@ public class DialogManager : MonoBehaviour
 
 
 
-    void StartDialog()
+    public void StartDialog(DiagolImages Images, GameObject NPC)
     {
+        this.Images = Images;
+        this.NPC = NPC;
+
         Time.timeScale = 0;
         count = 0;
         ControllerManager.instance.PausePlayer();
@@ -65,15 +71,13 @@ public class DialogManager : MonoBehaviour
         else
         {
             Destroy(instaceBaloon);
+            instaceBaloon = null;
+            Images = null;
+            NPC = null;
             Time.timeScale = 1;
             ControllerManager.instance.ResumePlayer();
-            EventManager.StopListening("OpenJail", StartDialog);
         }
     }
 
-    private void OnDestroy()
-    {
-        EventManager.StopListening("OpenJail", StartDialog);
-    }
 
 }
