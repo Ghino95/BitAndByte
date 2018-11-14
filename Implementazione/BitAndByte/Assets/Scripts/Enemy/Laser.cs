@@ -20,8 +20,9 @@ public class Laser : MonoBehaviour {
 
     private void Update()
     {
-        hit = Physics2D.Raycast(tr.position, Vector2.left, 20.0f, Target);
+        hit = Physics2D.Raycast(tr.position, -tr.right, 20.0f, Target);
         if(hit.collider != null){
+            Line.SetPosition(0, tr.position);
             Line.SetPosition(1, hit.point);
             if(hit.collider.CompareTag("Player")){
                 EventManager.TriggerEvent("GameOver");

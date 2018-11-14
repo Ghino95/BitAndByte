@@ -21,6 +21,7 @@ public class DisablePlayer : MonoBehaviour {
         foreach(MonoBehaviour script in scripts){
             script.enabled = false;
         }
+
         rig.drag = 10.0f;
     }
 
