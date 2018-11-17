@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Resident : InterfaceDisable {
 
-    [Header("Layer Visibili")]
-    public LayerMask Target;
-
-    private RaycastHit2D hit;
     public SpriteRenderer luce;
     private bool active;
 
@@ -20,7 +16,8 @@ public class Resident : InterfaceDisable {
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player") && active){
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Player") && active)
+        {
             EventManager.TriggerEvent("GameOver");
         }
     }
