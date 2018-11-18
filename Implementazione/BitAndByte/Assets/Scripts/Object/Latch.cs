@@ -17,7 +17,6 @@ public class Latch : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print(collision.name);
         anim.SetInteger("Status", 1);
         taget.PerformEffect(null);
     }

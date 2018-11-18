@@ -4,14 +4,6 @@ using UnityEngine;
 
 public class Sensor : InferfaceEffect {
 
-    private SpriteRenderer Luce;
-
-
-    private void Awake()
-    {
-        Luce = GetComponent<SpriteRenderer>();
-    }
-
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
@@ -24,10 +16,5 @@ public class Sensor : InferfaceEffect {
     {
         Destroy(gameObject);
     }
-
-
-
-
-
 
 }

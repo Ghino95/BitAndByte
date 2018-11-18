@@ -6,11 +6,13 @@ public class Button : MonoBehaviour
 
     public InferfaceEffect taget;
     private Animator anim;
+    private Collider2D col;
 
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        col = GetComponent<Collider2D>();
     }
 
 
@@ -18,6 +20,7 @@ public class Button : MonoBehaviour
     {
         anim.SetTrigger("Activate");
         taget.PerformEffect(null);
+        col.enabled = false;
     }
 
 
