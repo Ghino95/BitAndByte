@@ -11,7 +11,6 @@ public class DialogManager : MonoBehaviour
     public GameObject EmptyImage;
 
     private DiagolImages Images;
-    private GameObject NPC;
     private int count;
     private Image Current;
     private GameObject instaceBaloon;
@@ -41,7 +40,6 @@ public class DialogManager : MonoBehaviour
     public void StartDialog(DiagolImages Images, GameObject NPC)
     {
         this.Images = Images;
-        this.NPC = NPC;
 
         Time.timeScale = 0;
         count = 0;
@@ -73,7 +71,6 @@ public class DialogManager : MonoBehaviour
             Destroy(instaceBaloon);
             instaceBaloon = null;
             Images = null;
-            NPC = null;
             Time.timeScale = 1;
             ControllerManager.instance.ResumePlayer();
         }

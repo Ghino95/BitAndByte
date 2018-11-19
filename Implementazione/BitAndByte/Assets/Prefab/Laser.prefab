@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 16179
 --- !u!120 &120976090372634024
 LineRenderer:
   m_ObjectHideFlags: 1

@@ -8,7 +8,7 @@ public class Lift : InferfaceEffect
     private Vector3 start;
     public Vector3 target;
     private Rigidbody2D rig;
-    private bool triggered;
+    public bool triggered = false;
     private bool end;
 
 
@@ -20,7 +20,6 @@ public class Lift : InferfaceEffect
         start = tr.position;
         rig = GetComponent<Rigidbody2D>();
         end = false;
-        triggered = false;
     }
 
     // Update is called once per frame

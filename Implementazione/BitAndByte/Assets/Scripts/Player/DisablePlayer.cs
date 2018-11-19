@@ -10,10 +10,11 @@ public class DisablePlayer : MonoBehaviour {
     private void Awake()
     {
         scripts = new List<MonoBehaviour>();
-        scripts.AddRange(GetComponents<MonoBehaviour>());
         scripts.AddRange(GetComponentsInChildren<MonoBehaviour>());
         scripts.Remove(this);
+        scripts.Remove(GetComponentInChildren<_2dxFX_Hologram>());
         rig = GetComponent<Rigidbody2D>();
+
     }
 
     public void Disable()
@@ -21,6 +22,7 @@ public class DisablePlayer : MonoBehaviour {
         foreach(MonoBehaviour script in scripts){
             script.enabled = false;
         }
+
         rig.drag = 10.0f;
     }
 

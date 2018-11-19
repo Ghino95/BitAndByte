@@ -5,7 +5,7 @@ using System.Collections;
 public class ControllerManager: MonoBehaviour
 {
 
-    public DeadzoneCamera camera;
+    public DeadzoneCamera CameraMobile;
 
     public static ControllerManager instance
     {
@@ -29,7 +29,7 @@ public class ControllerManager: MonoBehaviour
             player.Disable();
         }
         players[playerEnable].Enable();
-        camera.target = players[playerEnable].gameObject.GetComponent<Renderer>();
+        CameraMobile.target = players[playerEnable].gameObject.GetComponent<Renderer>();
         
     }
 
@@ -40,7 +40,7 @@ public class ControllerManager: MonoBehaviour
             players[playerEnable].Disable();
             playerEnable = (playerEnable +1) % players.Count;
             players[playerEnable].Enable();
-            camera.target = players[playerEnable].gameObject.GetComponent<Renderer>();
+            CameraMobile.target = players[playerEnable].gameObject.GetComponent<Renderer>();
         }
         if(Input.GetButtonDown("Pause")){
             PausePlayer();
