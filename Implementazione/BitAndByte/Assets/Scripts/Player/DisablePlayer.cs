@@ -23,7 +23,8 @@ public class DisablePlayer : MonoBehaviour {
             script.enabled = false;
         }
 
-        rig.drag = 10.0f;
+        rig.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+
     }
 
     public void Enable()
@@ -33,6 +34,8 @@ public class DisablePlayer : MonoBehaviour {
             script.enabled = true;
         }
         rig.drag = 0.0f;
+
+        rig.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
 }

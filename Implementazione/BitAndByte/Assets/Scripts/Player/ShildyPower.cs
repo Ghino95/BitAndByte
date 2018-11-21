@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ShildyPower : MonoBehaviour {
 
-
     private GameObject enemy;
     private bool CanActive = false;
 
