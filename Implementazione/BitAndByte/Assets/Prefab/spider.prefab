@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1010931712791082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.65, y: -6.24, z: 0}
+  m_LocalPosition: {x: 2.69, y: -6.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,7 +75,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -270,5 +270,5 @@ DistanceJoint2D:
   m_Anchor: {x: -0.02686119, y: 0.30050087}
   m_ConnectedAnchor: {x: 2.6401486, y: -3.9079082}
   m_AutoConfigureDistance: 1
-  m_Distance: 2.031662
+  m_Distance: 1.9517262
   m_MaxDistanceOnly: 0
