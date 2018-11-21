@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 114200871020040474}
   - component: {fileID: 198075698392153152}
   - component: {fileID: 199491381036732020}
+  - component: {fileID: 114984219860983102}
   m_Layer: 9
   m_Name: Bitty
   m_TagString: Player
@@ -119,7 +120,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1353969970409506}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.23, y: 7.31, z: 0}
+  m_LocalPosition: {x: -17.4, y: 7.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4202117918506756}
@@ -299,6 +300,17 @@ MonoBehaviour:
   shot: {fileID: 1305361941558088, guid: 422df41f068f14439928987c67145098, type: 2}
   dx: {fileID: 4438022934253438}
   sx: {fileID: 4565552090322690}
+--- !u!114 &114984219860983102
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1353969970409506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d416b334c357c423c90b14db68eb9b0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114989000112910258
 MonoBehaviour:
   m_ObjectHideFlags: 1

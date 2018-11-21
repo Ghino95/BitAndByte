@@ -7,6 +7,8 @@ public class Worm : InferfaceEffect {
     public List<GameObject> Parti;
     private int count;
 
+    public List<InferfaceEffect> Attivare;
+
 
     private void Awake()
     {
@@ -19,6 +21,9 @@ public class Worm : InferfaceEffect {
         count++;
         if(count == Parti.Count){
             Destroy(gameObject);
+            foreach(InferfaceEffect Elemento in Attivare){
+                Elemento.PerformEffect(null);
+            }
         }
     }
 
