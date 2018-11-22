@@ -12,11 +12,15 @@ public class Wall : InferfaceEffect{
         
     }
 
-
-
     public override void PerformEffect(GameObject oggetto)
     {
+        GetComponent<Collider2D>().enabled = false;
         anim.SetTrigger("Activate");
+    }
+
+    private void DestroyWall()
+    {
+        Destroy(gameObject);
     }
 
 
