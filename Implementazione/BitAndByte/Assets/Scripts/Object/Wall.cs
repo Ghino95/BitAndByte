@@ -18,9 +18,16 @@ public class Wall : InferfaceEffect{
         anim.SetTrigger("Activate");
     }
 
-    private void DestroyWall()
+    public override void DisableEffect(GameObject oggetto)
     {
-        Destroy(gameObject);
+        this.gameObject.SetActive(true);
+        GetComponent<Collider2D>().enabled = true;
+        anim.SetTrigger("Deactivate");
+    }
+
+    private void DeactivateWall()
+    {
+        this.gameObject.SetActive(false);
     }
 
 
