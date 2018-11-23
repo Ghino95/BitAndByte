@@ -12,6 +12,8 @@ public class ControlPlayer : MonoBehaviour {
     [Header("Contatto con il terreno")]
     public bool grounded = false;
 
+    //aggiungere come stato "teleport" e quando si sta teletrasportando non funzionano gli input
+
     private Rigidbody2D rig;
     private SpriteRenderer spriteRenderer;
     private Vector2 move;
