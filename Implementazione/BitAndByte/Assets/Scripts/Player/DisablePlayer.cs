@@ -13,6 +13,8 @@ public class DisablePlayer : MonoBehaviour {
         scripts.AddRange(GetComponentsInChildren<MonoBehaviour>());
         scripts.Remove(this);
         scripts.Remove(GetComponentInChildren<_2dxFX_Hologram>());
+        scripts.Remove(GetComponentInChildren<_2dxFX_Teleportation>());
+        scripts.Remove(GetComponentInChildren<TestAnim>());
         rig = GetComponent<Rigidbody2D>();
 
     }

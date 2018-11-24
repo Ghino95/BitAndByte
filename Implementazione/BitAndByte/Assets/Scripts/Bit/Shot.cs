@@ -6,8 +6,10 @@ public class Shot: MonoBehaviour
 
     private bool HaveBit;
     private SpriteRenderer spriteRenderer;
-
+    private Animator anim;
     private ParticleSystem effect;
+    private Transform direzione;
+    private Transform tr;
 
     public GameObject shot;
     public Transform dx;
@@ -17,6 +19,9 @@ public class Shot: MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         effect = GetComponent<ParticleSystem>();
+        anim = GetComponent<Animator>();
+        tr = GetComponent<Transform>();
+        direzione = dx;
         HaveBit = false;
     }
 
@@ -24,12 +29,9 @@ public class Shot: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateDirezione();
         if(HaveBit && Input.GetButtonDown("Fire1")){
-            if(!spriteRenderer.flipX){
-                Instantiate(shot, dx.position, dx.rotation);
-            }else{
-                Instantiate(shot, sx.position, sx.rotation);
-            }
+            Instantiate(shot, direzione.position, direzione.rotation);
             HaveBit = false;
             effect.Pause();
             effect.Clear();
@@ -37,9 +39,16 @@ public class Shot: MonoBehaviour
 
     }
 
+    private void UpdateDirezione(){
+        if(anim.GetInteger("Direzione") > 0){
+            direzione = dx;
+        }else if(anim.GetInteger("Direzione") < 0){
+            direzione = sx;
+        }
+    }
+
     public void EnableBit(){
         HaveBit = true;
         effect.Play();
-        //aggiungere effetto grafico
     }
 }

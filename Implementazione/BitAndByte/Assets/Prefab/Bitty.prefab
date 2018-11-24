@@ -61,6 +61,9 @@ GameObject:
   - component: {fileID: 198075698392153152}
   - component: {fileID: 199491381036732020}
   - component: {fileID: 114984219860983102}
+  - component: {fileID: 95999021872547484}
+  - component: {fileID: 114566572682574876}
+  - component: {fileID: 114814155335224708}
   m_Layer: 9
   m_Name: Bitty
   m_TagString: Player
@@ -120,7 +123,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1353969970409506}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.4, y: 7.02, z: 0}
+  m_LocalPosition: {x: -10.87, y: 6.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4202117918506756}
@@ -239,6 +242,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.35429955, y: 0.06394329}
   m_EdgeRadius: 0
+--- !u!95 &95999021872547484
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1353969970409506}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c5ca8e0d285a741369b578f9e8ff9d24, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114200871020040474
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -286,6 +307,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb4f557795474f0499c4c0c5c02595b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114566572682574876
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1353969970409506}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7023be542ef9542bc696d27c191da0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ForceMaterial: {fileID: 0}
+  ActiveChange: 1
+  _Alpha: 1
+  Teleportation: 0.308
+  ShaderChange: 0
 --- !u!114 &114591863636380196
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -300,6 +337,17 @@ MonoBehaviour:
   shot: {fileID: 1305361941558088, guid: 422df41f068f14439928987c67145098, type: 2}
   dx: {fileID: 4438022934253438}
   sx: {fileID: 4565552090322690}
+--- !u!114 &114814155335224708
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1353969970409506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbf871531f9204f6cb4de4fbddb5037c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114984219860983102
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -12,23 +12,16 @@ public class TestAnim : MonoBehaviour {
     {
         anim = GetComponent<Animator>();
         rig = GetComponent<Rigidbody2D>();
+        anim.SetBool("ParticolState", false);
     }
 
-   
-	
-	// Update is called once per frame
 	void Update () {
+        anim.SetInteger("Direzione", Sign(rig.velocity.x));
+    }
 
-        Vector2 velocity = rig.velocity;
+    private int Sign(float vel)
+    {
+        return vel < 0 ? -1 : (vel > 0 ? 1 : 0);
+    }
 
-        if(velocity.x > 0){
-            anim.SetInteger("Direction", 1);
-        } else if(velocity.x < 0){
-            anim.SetInteger("Direction", -1);
-        }
-        else{
-            anim.SetInteger("Direction", 0);
-        }
-		
-	}
 }
