@@ -61,6 +61,9 @@ GameObject:
   - component: {fileID: 114978235887168466}
   - component: {fileID: 114734002713881454}
   - component: {fileID: 114304790685699808}
+  - component: {fileID: 95517402501861818}
+  - component: {fileID: 114925996818819288}
+  - component: {fileID: 114117453603329262}
   m_Layer: 9
   m_Name: Gimpy
   m_TagString: Player
@@ -145,7 +148,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.75, y: 1.015625}
+    oldSize: {x: 0.75, y: 1}
     newSize: {x: 1.5015016, y: 1.8018018}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -179,6 +182,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.35429955, y: 0.06394329}
   m_EdgeRadius: 0
+--- !u!95 &95517402501861818
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1894846763523702}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ba708a0291d0c425f9d8093cbaed27da, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114066065596096198
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -190,6 +211,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3e16828375e5403e94c625333db7bd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114117453603329262
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1894846763523702}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7023be542ef9542bc696d27c191da0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ForceMaterial: {fileID: 0}
+  ActiveChange: 1
+  _Alpha: 1
+  Teleportation: 0.308
+  ShaderChange: 0
 --- !u!114 &114293783465466206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -246,6 +283,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb4f557795474f0499c4c0c5c02595b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114925996818819288
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1894846763523702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbf871531f9204f6cb4de4fbddb5037c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114978235887168466
@@ -340,8 +388,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bdf158107ec7c4d9bbb13e427af975d8, type: 3}
-  m_Color: {r: 0.16862746, g: 0, b: 1, a: 1}
+  m_Sprite: {fileID: 21300002, guid: 2114891f467984d3a81358b1a570c0bc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
