@@ -15,7 +15,7 @@ public class TestAnim : MonoBehaviour {
         anim.SetBool("ParticolState", false);
     }
 
-	void Update () {
+	void FixedUpdate () {
         anim.SetInteger("Direzione", Sign(rig.velocity.x));
     }
 

@@ -31,12 +31,25 @@ public class Shot: MonoBehaviour
     {
         UpdateDirezione();
         if(HaveBit && Input.GetButtonDown("Fire1")){
-            Instantiate(shot, direzione.position, direzione.rotation);
-            HaveBit = false;
-            effect.Pause();
-            effect.Clear();
+            StartCoroutine(Fire());
         }
 
+    }
+
+    private IEnumerator Fire(){
+        anim.SetBool("ParticolState", true);
+        if (direzione == dx)
+            anim.SetInteger("Shot", 1);
+        else
+            anim.SetInteger("Shot", -1);
+        Instantiate(shot, direzione.position, direzione.rotation);
+        yield return new WaitForSeconds(0.1f);
+        anim.SetBool("ParticolState", false);
+        anim.SetInteger("Shot", 0);
+        HaveBit = false;
+        effect.Pause();
+        effect.Clear();
+        anim.SetBool("Power", false);
     }
 
     private void UpdateDirezione(){
@@ -49,6 +62,7 @@ public class Shot: MonoBehaviour
 
     public void EnableBit(){
         HaveBit = true;
+        anim.SetBool("Power", true);
         effect.Play();
     }
 }

@@ -6,11 +6,20 @@ public class ShildyPower : MonoBehaviour {
 
     private GameObject enemy;
     private bool CanActive = false;
+    private Animator anim;
+    private SpriteRenderer Area;
+
+    private void Awake()
+    {
+        anim = GetComponentInParent<Animator>();
+        Area = GetComponent<SpriteRenderer>();
+        Area.enabled = false;
+    }
 
     private void Update()
     {
         if(Input.GetButtonDown("ActivePower") && CanActive){
-            enemy.GetComponent<InterfaceDisable>().ChangeState();
+            StartCoroutine(Scudo());
         }
     }
 
@@ -31,6 +40,17 @@ public class ShildyPower : MonoBehaviour {
             enemy.GetComponent<InterfaceDisable>().ActiveVirus();
             enemy = null;
         }
+    }
+
+    private IEnumerator Scudo(){
+        anim.SetBool("ParticolState", true);
+        anim.SetTrigger("Power");
+        Area.enabled = true;
+        enemy.GetComponent<InterfaceDisable>().ChangeState();
+        yield return new WaitForSeconds(0.5f);
+        anim.SetBool("ParticolState", false);
+        Area.enabled = false;
+
     }
 
 }
