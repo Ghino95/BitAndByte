@@ -30,7 +30,7 @@ public class Shot: MonoBehaviour
     void Update()
     {
         UpdateDirezione();
-        if(HaveBit && Input.GetButtonDown("Fire1")){
+        if(HaveBit && Input.GetButtonDown("ActivePower")){
             StartCoroutine(Fire());
         }
 

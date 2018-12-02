@@ -21,7 +21,7 @@ public class ZippyPower : MonoBehaviour {
 
     private void Update()
     {
-        if (Other != null && Input.GetButtonDown("Fire1"))
+        if (Other != null && Input.GetButtonDown("Interact"))
         {
             Other.GetComponent<ChangeSize>().ChangeSizeEffect();
         }
