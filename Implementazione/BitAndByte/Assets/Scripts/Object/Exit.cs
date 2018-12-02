@@ -5,13 +5,16 @@ using UnityEngine;
 public class Exit : MonoBehaviour {
 
     public int TotalPlayer;
-    public int ActualPlayer;
+    private int ActualPlayer;
     private Animator Anim;
+
+    public int Mondo;
 
     private void Awake()
     {
         ActualPlayer = 0;
         Anim = GetComponent<Animator>();
+        Anim.SetInteger("Level", Mondo);
         EventManager.StartListening("CatchKey",OpenGate);
     }
 
@@ -34,7 +37,7 @@ public class Exit : MonoBehaviour {
     }
 
     private void OpenGate(){
-        Anim.SetTrigger("Open");
+        Anim.SetBool("OpenDoor",true);
     }
 
     private void OnDestroy()

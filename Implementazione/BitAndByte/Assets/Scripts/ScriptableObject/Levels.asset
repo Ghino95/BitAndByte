@@ -13,6 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Menu: MainMenu
   levels:
+  - Level1-1
+  - Level1-2
+  - Level1-3
   - Level2-1
   - Level3-1
   - Level4-3

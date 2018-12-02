@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HUD : MonoBehaviour {
 
     public GameObject KeyImage;
     public GameObject MenuPause;
+    public Sprite KeyCatched;
 
     private void Awake()
     {
@@ -47,7 +49,8 @@ public class HUD : MonoBehaviour {
 
     private void CatchKey()
     {
-        KeyImage.SetActive(true);
+        KeyImage.GetComponent<Image>().sprite = KeyCatched;
+
     }
 
 

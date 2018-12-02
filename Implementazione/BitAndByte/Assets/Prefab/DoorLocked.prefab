@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1591279006154030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.52, y: 6.6943293, z: 0}
+  m_LocalPosition: {x: 25.03, y: 3.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -55,18 +55,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.0146773, y: 0}
+  m_Offset: {x: -1.1077976, y: 0.09688747}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.93333334, y: 1.5466666}
+    oldSize: {x: 1.93, y: 2.09}
     newSize: {x: 0.6034483, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.962688, y: 1.5466666}
+  m_Size: {x: 3.7872467, y: 1.9000199}
   m_EdgeRadius: 0
 --- !u!95 &95936911227962780
 Animator:
@@ -97,8 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b55e668cef1d54b2abb986ec838b158d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TotalPlayer: 2
-  ActualPlayer: 0
+  TotalPlayer: 4
+  Mondo: 4
 --- !u!212 &212427434926227234
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -134,7 +134,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 6cc1e0cca92604ee58b8d154be483395, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cdd300a69ba2141a589eadb22bae9cdd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
