@@ -7,6 +7,7 @@ public class ZippyPower : MonoBehaviour {
     public List<Vector3> Trasformazioni;
     private Transform tr;
     private int count;
+    private Animator anim;
 
     private GameObject Other;
 
@@ -14,6 +15,7 @@ public class ZippyPower : MonoBehaviour {
     private void Awake()
     {
         tr = GetComponent<Transform>();
+        anim = GetComponent<Animator>();
         count = 0;
     }
 
@@ -25,10 +27,11 @@ public class ZippyPower : MonoBehaviour {
         }
         if (Input.GetButtonDown("ActivePower"))
         {
-            count = (count + 1) % Trasformazioni.Count;
-            tr.localScale = Trasformazioni[count];
+            count = (count + 1) % 3;
+            anim.SetInteger("Size",count);
         }
     }
+
 
 
     private void OnCollisionEnter2D(Collision2D collision)
