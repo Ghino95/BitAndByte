@@ -32,7 +32,7 @@ public class Trojan : InterfaceDisable{
     {
         if (!disable)
         {
-            Direzione = Sprite.flipX ? tr.right : -tr.right;
+            Direzione = !Sprite.flipX ? tr.right : -tr.right;
             hit = Physics2D.Raycast(tr.position, Direzione, 8.0f);
             if (hit.collider != null && hit.collider.CompareTag("Player"))
             {

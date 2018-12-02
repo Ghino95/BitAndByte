@@ -40,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1010931712791082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.69, y: -6.16, z: 0}
+  m_LocalPosition: {x: 5.078766, y: -5.710863, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,7 +82,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.55, y: 0.75}
+    oldSize: {x: 1.109375, y: 0.7109375}
     newSize: {x: 1, y: 1.3636364}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -174,8 +174,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0, g: 0, b: 0, a: 1}
-      key1: {r: 0, g: 0, b: 0, a: 1}
+      key0: {r: 0.15686275, g: 0.054901965, b: 0.19215688, a: 1}
+      key1: {r: 0.15294118, g: 0.050980397, b: 0.19215688, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -243,7 +243,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1f41f32590847446999317e8d45c7738, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 65564c5ab2f5d449693830e0d772a0e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -267,8 +267,8 @@ DistanceJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: -0.02686119, y: 0.30050087}
-  m_ConnectedAnchor: {x: 2.6401486, y: -3.9079082}
+  m_Anchor: {x: 0, y: 0.35546875}
+  m_ConnectedAnchor: {x: 5.032733, y: -4.919407}
   m_AutoConfigureDistance: 1
-  m_Distance: 1.9517262
+  m_Distance: 0.4384109
   m_MaxDistanceOnly: 0

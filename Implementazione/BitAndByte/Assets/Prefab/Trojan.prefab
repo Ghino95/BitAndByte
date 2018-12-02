@@ -35,12 +35,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4513506524555038}
   - component: {fileID: 212995722461175004}
-  - component: {fileID: 61751812379231304}
   - component: {fileID: 50201175194682804}
   - component: {fileID: 114266551092466782}
+  - component: {fileID: 61857424038924512}
   m_Layer: 0
   m_Name: Trojan
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1995253047893888}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.64, y: 6.76, z: 0}
+  m_LocalPosition: {x: -0.29, y: 7.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4769819961419958}
@@ -66,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1651739848879116}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.24, y: 0, z: 0}
+  m_LocalPosition: {x: 1.24, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4513506524555038}
@@ -91,8 +91,8 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!61 &61751812379231304
+  m_Constraints: 4
+--- !u!61 &61857424038924512
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,14 +108,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.73, y: 1.43}
+    oldSize: {x: 1.4, y: 1.6}
     newSize: {x: 1.73, y: 1.43}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.73, y: 1.43}
+  m_Size: {x: 1.4, y: 1.6}
   m_EdgeRadius: 0
 --- !u!114 &114266551092466782
 MonoBehaviour:
@@ -128,10 +128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4501eb5586c94c88802363d84f8735d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObstacleLayer:
-    serializedVersion: 2
-    m_Bits: 512
-  Front: {fileID: 4769819961419958}
 --- !u!212 &212995722461175004
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -167,7 +163,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c0bd3542bae5547ef83453736b031be0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8631229dfb53a40dcbe3380e699604bb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
