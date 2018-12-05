@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Trojan : InterfaceDisable{
 
+    public float MaxDistanza;
+
+
     private LayerMask ObstacleLayer;
     private Rigidbody2D rig;
     private RaycastHit2D hit;
@@ -33,7 +36,7 @@ public class Trojan : InterfaceDisable{
         if (!disable)
         {
             Direzione = !Sprite.flipX ? tr.right : -tr.right;
-            hit = Physics2D.Raycast(tr.position, Direzione, 8.0f);
+            hit = Physics2D.Raycast(tr.position, Direzione, MaxDistanza);
             if (hit.collider != null && hit.collider.CompareTag("Player"))
             {
                 rig.velocity = (Direzione).normalized * velocity;
