@@ -71,6 +71,7 @@ public class Spider : InterfaceDisable{
         if (collision.CompareTag("BitShot"))
         {
             idle = true;
+            Destroy(gameObject);
         }
         if(collision.CompareTag("Player")){
             EventManager.TriggerEvent("GameOver");

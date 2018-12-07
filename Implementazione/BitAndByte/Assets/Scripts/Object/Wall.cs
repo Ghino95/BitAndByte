@@ -14,14 +14,14 @@ public class Wall : InferfaceEffect{
 
     public override void PerformEffect(GameObject oggetto)
     {
-        GetComponent<Collider2D>().enabled = false;
+       //GetComponent<Collider2D>().enabled = false;
         anim.SetTrigger("Activate");
     }
 
     public override void DisableEffect(GameObject oggetto)
     {
         this.gameObject.SetActive(true);
-        GetComponent<Collider2D>().enabled = true;
+        //GetComponent<Collider2D>().enabled = true;
         anim.SetTrigger("Deactivate");
     }
 

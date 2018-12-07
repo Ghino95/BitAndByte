@@ -31,7 +31,7 @@ public class Terminal : MonoBehaviour {
             interact = false;
         }else if(interact && Input.GetButtonDown("Swap")){
             count = (count+1) % lasers.Count;
-        }else if (interact && Input.GetButtonDown("Vertical"))
+        }else if (interact && Input.GetButtonDown("Jump"))
         {
             lasers[count].PerformEffect(null);
         }

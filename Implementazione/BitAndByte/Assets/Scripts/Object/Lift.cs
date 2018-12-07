@@ -40,7 +40,7 @@ public class Lift : InferfaceEffect
                 target = start;
                 start = temp;
                 end = true;
-                yield return new WaitForSeconds(5f);
+                yield return new WaitForSeconds(2f);
                 end = false;
             }
         }
