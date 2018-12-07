@@ -78,9 +78,14 @@ public class Spider : InterfaceDisable{
         }
     }
 
-    public override void ChangeState()
+    public override void DisableVirus()
     {
-        disable = !disable;
+        disable = true;
+        if (Risveglio != null)
+        {
+            StopCoroutine(Risveglio);
+            Risveglio = null;
+        }
     }
 
     public override void ActiveVirus()
@@ -91,14 +96,7 @@ public class Spider : InterfaceDisable{
         }
     }
 
-    public override void EnterZone()
-    {
-        if (Risveglio != null)
-        {
-            StopCoroutine(Risveglio);
-            Risveglio = null;
-        }
-    }
+
 
     private IEnumerator Reactive()
     {

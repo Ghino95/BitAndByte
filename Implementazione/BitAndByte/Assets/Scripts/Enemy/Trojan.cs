@@ -58,7 +58,7 @@ public class Trojan : InterfaceDisable{
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(!disable && collision.gameObject.CompareTag("Player")){
+        if(collision.gameObject.CompareTag("Player")){
             EventManager.TriggerEvent("GameOver");
         }
 
@@ -72,19 +72,16 @@ public class Trojan : InterfaceDisable{
         }
     }
 
-    public override void ChangeState()
+    public override void DisableVirus()
     {
-        disable = !disable;
-    }
-
-    public override void EnterZone()
-    {
+        disable = true;
         if (Risveglio != null)
         {
             StopCoroutine(Risveglio);
             Risveglio = null;
         }
     }
+
 
     private IEnumerator Reactive()
     {

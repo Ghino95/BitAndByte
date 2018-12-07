@@ -22,10 +22,15 @@ public class Resident : InterfaceDisable {
         }
     }
 
-    public override void ChangeState()
+    public override void DisableVirus()
     {
-        luce.enabled = !luce.enabled;
-        active = !active;
+        luce.enabled = false;
+        active = false;
+        if (Risveglio != null)
+        {
+            StopCoroutine(Risveglio);
+            Risveglio = null;
+        }
     }
 
     public override void ActiveVirus()
@@ -36,18 +41,11 @@ public class Resident : InterfaceDisable {
 
     }
 
-    public override void EnterZone()
-    {
-        if(Risveglio != null){
-            StopCoroutine(Risveglio);
-            Risveglio = null;
-        }
-    }
 
     private IEnumerator Reactive(){
         yield return new WaitForSeconds(5.0f);
         luce.enabled = true;
-        active = !active;
+        active = true;
         Risveglio = null;
     }
 

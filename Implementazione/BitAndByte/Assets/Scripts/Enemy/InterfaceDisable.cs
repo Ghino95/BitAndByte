@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class InterfaceDisable : MonoBehaviour {
 
-    virtual public void ChangeState(){
+    virtual public void DisableVirus(){
 
     }
 
     virtual public void ActiveVirus(){
-
-    }
-
-    virtual public void EnterZone(){
 
     }
 }
