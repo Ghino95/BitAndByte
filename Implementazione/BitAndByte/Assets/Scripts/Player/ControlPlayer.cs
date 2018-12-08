@@ -12,10 +12,7 @@ public class ControlPlayer : MonoBehaviour {
     [Header("Contatto con il terreno")]
     public bool grounded = false;
 
-    //aggiungere come stato "teleport" e quando si sta teletrasportando non funzionano gli input
-
     private Rigidbody2D rig;
-    private SpriteRenderer spriteRenderer;
     private Vector2 move;
 
 
@@ -23,7 +20,6 @@ public class ControlPlayer : MonoBehaviour {
     private void Awake()
     {
         rig = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
 	
@@ -36,26 +32,11 @@ public class ControlPlayer : MonoBehaviour {
 
         rig.velocity = move;
 
-
-
         if (Input.GetButtonDown("Jump") && grounded)
         {
             rig.velocity = new Vector2(rig.velocity.x, jumpForce);
         }
 
-
-        /*bool flipSprite = (spriteRenderer.flipX ? move.x > 0.01f : move.x < -0.01f);
-
-        if (flipSprite)
-        {
-            spriteRenderer.flipX = !spriteRenderer.flipX;
-        }*/
-
-    }
-
-    private void OnEnable()
-    {
-        //print("attivo " + this.name);
     }
 
     private void OnDisable()
@@ -63,7 +44,6 @@ public class ControlPlayer : MonoBehaviour {
         move = rig.velocity;
         move.x = 0;
         rig.velocity = move;
-        //print("disattivo " + this.name);
     }
 
 

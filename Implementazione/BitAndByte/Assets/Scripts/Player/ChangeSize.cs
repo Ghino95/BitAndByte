@@ -4,18 +4,39 @@ using UnityEngine;
 
 public class ChangeSize : MonoBehaviour {
 
-    private Transform tr;
     private Animator anim;
+    private readonly float differenza = 0.5f;
+    private RaycastHit2D hit;
+
 
     private void Awake()
     {
-        tr = GetComponent<Transform>();
         anim = GetComponent<Animator>();
         anim.SetBool("Small", false);
+
     }
 
     public void ChangeSizeEffect(){
-        anim.SetBool("Small", !anim.GetBool("Small"));
+        if (CalcolaProssimoStato())
+        {
+            anim.SetBool("Small", !anim.GetBool("Small"));
+        }
+    }
+
+    private bool CalcolaProssimoStato()
+    {
+        if (anim.GetBool("Small"))
+        {
+            hit = Physics2D.Raycast(transform.position, transform.up, differenza, LayerMask.GetMask("Default"));
+            return hit.collider == null;
+
+        }
+        else
+        {
+            return true;
+        }
+
+
     }
 
 }

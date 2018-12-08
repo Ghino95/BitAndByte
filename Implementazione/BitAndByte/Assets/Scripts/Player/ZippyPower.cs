@@ -5,18 +5,22 @@ using UnityEngine;
 public class ZippyPower : MonoBehaviour {
 
     public List<Vector3> Trasformazioni;
-    private Transform tr;
     private int count;
     private Animator anim;
-
     private GameObject Other;
-
+    private Transform tr;
+    private float[] sizes;
+    private RaycastHit2D hit;
 
     private void Awake()
     {
-        tr = GetComponent<Transform>();
         anim = GetComponent<Animator>();
         count = 0;
+        tr = GetComponent<Transform>();
+        sizes = new float[3];
+        sizes[0] = 0.9f;
+        sizes[1] = 0.4f;
+        sizes[2] = 1.4f;
     }
 
     private void Update()
@@ -27,21 +31,37 @@ public class ZippyPower : MonoBehaviour {
         }
         if (Input.GetButtonDown("ActivePower"))
         {
-            count = (count + 1) % 3;
-            anim.SetInteger("Size",count);
+            count = CalcolaProssimoStato();
+            anim.SetInteger("Size", count);
         }
     }
 
+    private int CalcolaProssimoStato()
+    {
+        int temp = count;
+        float differenza;
+        do
+        {
+            differenza = sizes[(temp + 1) % 3] - sizes[count];
+            hit = Physics2D.Raycast(tr.position, tr.up, differenza, LayerMask.GetMask("Default"));
+            temp = (temp + 1) % 3;
+            if (differenza < 0)
+            {
+                break;
+            }
+        } while (hit.collider != null);
+        return temp;
+    }
 
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
         if (collision.gameObject.CompareTag("Player"))
         {
             Other = collision.gameObject;
         }
     }
+
 
     private void OnCollisionExit2D(Collision2D collision)
     {
@@ -49,8 +69,6 @@ public class ZippyPower : MonoBehaviour {
             Other = null;
         }
     }
-
-
 
 
 }

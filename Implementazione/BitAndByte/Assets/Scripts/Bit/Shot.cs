@@ -5,11 +5,9 @@ public class Shot: MonoBehaviour
 {
 
     private bool HaveBit;
-    private SpriteRenderer spriteRenderer;
     private Animator anim;
     private ParticleSystem effect;
     private Transform direzione;
-    private Transform tr;
 
     public GameObject shot;
     public Transform dx;
@@ -17,16 +15,12 @@ public class Shot: MonoBehaviour
 
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
         effect = GetComponent<ParticleSystem>();
         anim = GetComponent<Animator>();
-        tr = GetComponent<Transform>();
         direzione = dx;
         HaveBit = false;
     }
 
-
-    // Update is called once per frame
     void Update()
     {
         UpdateDirezione();
