@@ -16,6 +16,10 @@ public class Terminal : MonoBehaviour {
         player = null;
         interact = false;
         count = 0;
+        foreach (InferfaceEffect laser in lasers)
+        {
+            laser.enabled = false;
+        }
     }
 
     private void Update()
@@ -23,15 +27,21 @@ public class Terminal : MonoBehaviour {
         if (!interact && player != null && Input.GetButtonDown("Interact")){
             player.GetComponent<DisablePlayer>().Disable();
             ControllerManager.instance.enabled = false;
+            count = 0;
+            lasers[count].enabled = true;
             interact = true;
         }else if (interact && player != null && Input.GetButtonDown("Interact"))
         {
             player.GetComponent<DisablePlayer>().Enable();
             ControllerManager.instance.enabled = true;
+            lasers[count].enabled = false;
             interact = false;
         }else if(interact && Input.GetButtonDown("Swap")){
+            lasers[count].enabled = false;
             count = (count+1) % lasers.Count;
-        }else if (interact && Input.GetButtonDown("Jump"))
+            lasers[count].enabled = true;
+        }
+        else if (interact && Input.GetButtonDown("Jump"))
         {
             lasers[count].PerformEffect(null);
         }
