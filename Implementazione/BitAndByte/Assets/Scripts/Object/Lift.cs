@@ -33,7 +33,7 @@ public class Lift : InferfaceEffect
         if ((triggered && !end) || (rig.velocity != Vector2.zero))
         {
             rig.velocity = (target - tr.position).normalized * 3.0f;
-            if ((tr.position - target).magnitude < 0.1f )
+            if ((tr.position - target).magnitude < 0.05f )
             {
                 rig.velocity = Vector2.zero;
                 temp = target;

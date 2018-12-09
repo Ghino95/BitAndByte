@@ -5,19 +5,15 @@ using UnityEngine.UI;
 
 public class HUD : MonoBehaviour {
 
-    public GameObject KeyImage;
     public GameObject MenuPause;
-    public Sprite KeyCatched;
 
     private void Awake()
     {
-        EventManager.StartListening("CatchKey", CatchKey);
         EventManager.StartListening("Pause", OpenMenuPause);
     }
 
     private void OnDestroy()
     {
-        EventManager.StopListening("CatchKey", CatchKey);
         EventManager.StopListening("Pause", OpenMenuPause);
     }
 
@@ -46,12 +42,5 @@ public class HUD : MonoBehaviour {
         Time.timeScale = 0;
         MenuPause.SetActive(true);
     }
-
-    private void CatchKey()
-    {
-        KeyImage.GetComponent<Image>().sprite = KeyCatched;
-
-    }
-
 
 }
