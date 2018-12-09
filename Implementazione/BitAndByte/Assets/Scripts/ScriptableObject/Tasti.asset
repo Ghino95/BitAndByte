@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 111600180420d41c6ace0f80b7fcf9f0, type: 3}
+  m_Name: Tasti
+  m_EditorClassIdentifier: 
+  Joypad:
+  - key: Horizontal
+    Image: {fileID: 21300014, guid: c104e1c9b92d740b38f3d0a17283a921, type: 3}
+  - key: Jump
+    Image: {fileID: 21300018, guid: c104e1c9b92d740b38f3d0a17283a921, type: 3}
+  - key: ActivePower
+    Image: {fileID: 21300010, guid: c104e1c9b92d740b38f3d0a17283a921, type: 3}
+  - key: Interact
+    Image: {fileID: 21300002, guid: c104e1c9b92d740b38f3d0a17283a921, type: 3}
+  - key: Swap
+    Image: {fileID: 21300012, guid: c104e1c9b92d740b38f3d0a17283a921, type: 3}
+  Keyboard:
+  - key: Horizontal
+    Image: {fileID: 21300000, guid: e620aed0d03a946b5bacfe7811cf0438, type: 3}
+  - key: Jump
+    Image: {fileID: 21300000, guid: ee818c840172c4e8790c0cff0225fa9e, type: 3}
+  - key: ActivePower
+    Image: {fileID: 21300000, guid: c10ab77403cb848aeaeb335dad4abccc, type: 3}
+  - key: Interact
+    Image: {fileID: 21300000, guid: d26255ef4372843409287d893143a05c, type: 3}
+  - key: Swap
+    Image: {fileID: 21300000, guid: d1e10a8f78df541f78eb02a7a718b024, type: 3}
