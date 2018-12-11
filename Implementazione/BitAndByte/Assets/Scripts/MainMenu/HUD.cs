@@ -22,7 +22,7 @@ public class HUD : MonoBehaviour {
     {
         Time.timeScale = 1;
         MenuPause.SetActive(false);
-        ControllerManager.instance.ResumePlayer();
+        EventManager.TriggerEvent("ResumePlayer");
     }
 
     public void Restart()

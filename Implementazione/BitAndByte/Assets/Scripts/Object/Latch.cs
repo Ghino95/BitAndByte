@@ -5,15 +5,31 @@ using UnityEngine;
 public class Latch : MonoBehaviour
 {
 
-    public InferfaceEffect taget;
+    public InferfaceEffect[] target;
+    private int i = 0;
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {
-        taget.PerformEffect(null);
+    {   
+        if (i == 0)
+        {
+            foreach (InferfaceEffect temp in target)
+            {
+                temp.PerformEffect(null);
+            }
+        }
+        i++;
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        taget.DisableEffect(null);
+        i--;
+        if (i == 0)
+        {
+            foreach (InferfaceEffect temp in target)
+            {
+                temp.DisableEffect(null);
+            }
+        }
     }
 }

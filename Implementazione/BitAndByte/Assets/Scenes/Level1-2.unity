@@ -666,6 +666,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114678468333539894, guid: 935d8912f48d34c4d9710034c8fa6f8d,
+        type: 2}
+      propertyPath: target.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4154276489811654, guid: 935d8912f48d34c4d9710034c8fa6f8d, type: 2}
       propertyPath: m_LocalPosition.x
       value: 4.37
@@ -701,6 +706,11 @@ Prefab:
     - target: {fileID: 114678468333539894, guid: 935d8912f48d34c4d9710034c8fa6f8d,
         type: 2}
       propertyPath: taget
+      value: 
+      objectReference: {fileID: 382994974}
+    - target: {fileID: 114678468333539894, guid: 935d8912f48d34c4d9710034c8fa6f8d,
+        type: 2}
+      propertyPath: target.Array.data[0]
       value: 
       objectReference: {fileID: 382994974}
     m_RemovedComponents: []
@@ -56733,7 +56743,7 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!21 &1714980596
+--- !u!21 &1705379132
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class TestAnim : MonoBehaviour {
 
     private Animator anim;
     private Rigidbody2D rig;
+    private int invert;
 
     private void Awake()
     {
@@ -16,7 +17,8 @@ public class TestAnim : MonoBehaviour {
     }
 
 	void FixedUpdate () {
-        anim.SetInteger("Direzione", Sign(rig.velocity.x));
+        invert = rig.gravityScale >= 0 ? 1 : -1;
+        anim.SetInteger("Direzione", invert * Sign(rig.velocity.x));
     }
 
     private int Sign(float vel)

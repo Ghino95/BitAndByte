@@ -16,6 +16,14 @@ public class ControllerManager: MonoBehaviour
     private void Awake()
     {
         instance = this;
+        EventManager.StartListening("PausePlayer", PausePlayer);
+        EventManager.StartListening("ResumePlayer", ResumePlayer);
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.StopListening("PausePlayer", PausePlayer);
+        EventManager.StopListening("ResumePlayer", ResumePlayer);
     }
 
     public List<DisablePlayer> players;

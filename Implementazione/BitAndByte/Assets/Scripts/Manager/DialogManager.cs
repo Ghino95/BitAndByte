@@ -43,7 +43,7 @@ public class DialogManager : MonoBehaviour
 
         Time.timeScale = 0;
         count = 0;
-        ControllerManager.instance.PausePlayer();
+        EventManager.TriggerEvent("PausePlayer");
         instaceBaloon = Instantiate(Baloon);
         instaceBaloon.transform.SetParent(can.transform, false);
         instaceBaloon.transform.SetPositionAndRotation(NPC.transform.position + new Vector3(2, 2, 0), Quaternion.identity);
@@ -72,7 +72,7 @@ public class DialogManager : MonoBehaviour
             instaceBaloon = null;
             Images = null;
             Time.timeScale = 1;
-            ControllerManager.instance.ResumePlayer();
+            EventManager.TriggerEvent("ResumePlayer");
         }
     }
 

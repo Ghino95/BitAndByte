@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour {
 
@@ -10,19 +11,29 @@ public class UIManager : MonoBehaviour {
         private set;
     }
 
+    public GameObject MainMenuObj;
+    public GameObject MenuLevel;
 
+    public GameObject StartMenu;
+    public GameObject StartLevel;
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        instance = this;
+    }
+
+    public void ActiveLevel()
+    {
+        MainMenuObj.SetActive(false);
+        MenuLevel.SetActive(true);
+        EventSystem.current.GetComponent<EventSystem>().SetSelectedGameObject(StartLevel);
+    }
+
+    public void ActiveMainMenu()
+    {
+        MainMenuObj.SetActive(true);
+        MenuLevel.SetActive(false);
+        EventSystem.current.GetComponent<EventSystem>().SetSelectedGameObject(StartMenu);
     }
 
 
