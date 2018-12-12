@@ -12,16 +12,17 @@ public class Spider : InterfaceDisable{
     private Transform tr;
     private RaycastHit2D hit;
     private Vector2 direction;
-    private bool idle;
     private bool disable;
     private Coroutine Risveglio;
-    private readonly float velocity = 0.3f;
+    private Rigidbody2D rig;
+    private readonly float velocity = 0.2f;
 
     private void Awake()
     {
         joint = GetComponent<DistanceJoint2D>();
         tr = GetComponent<Transform>();
-        idle = false;
+        rig = GetComponent<Rigidbody2D>();
+        rig.sleepMode = RigidbodySleepMode2D.NeverSleep;
         disable = false;
 
     }
@@ -29,39 +30,35 @@ public class Spider : InterfaceDisable{
     private bool IsPlayer(){
 
         hit = Physics2D.Raycast(tr.position, -tr.up, 2.5f, ObstacleLayer);
-        return hit.collider != null ? true : false;
+        return hit.collider != null && hit.collider.CompareTag("Player");
     }
 
     private void Update()
     {
-        if(!idle && !disable){
-            StartCoroutine("Move");
+       if(!disable){
+            Move();
         }
         else{
-            StartCoroutine("Idle");
+            Idle();
         }
     }
 
 
-    IEnumerator Move()
+    private void Move()
     {
         if(IsPlayer()){
             joint.distance += velocity;
-        }else if(joint.distance > 1.0f){
-            joint.distance += -velocity;
         }
-        return null;
-
+        else if(joint.distance > 1.0f){
+            joint.distance -= velocity;
+        }
     }
 
-    IEnumerator Idle()
+    private void Idle()
     {
         if (joint.distance > 1.0f)
         {
-            joint.distance += -velocity;
-        }else{
-            yield return new WaitForSeconds(5f);
-            idle = false;
+            joint.distance -= velocity;
         }
     }
 
@@ -70,7 +67,6 @@ public class Spider : InterfaceDisable{
     {
         if (collision.CompareTag("BitShot"))
         {
-            idle = true;
             Destroy(gameObject);
         }
         if(collision.CompareTag("Player")){
