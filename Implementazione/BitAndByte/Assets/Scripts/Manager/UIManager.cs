@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour {
         get;
         private set;
     }
+    
 
     public GameObject MainMenuObj;
     public GameObject MenuLevel;
@@ -20,6 +21,7 @@ public class UIManager : MonoBehaviour {
     private void Awake()
     {
         instance = this;
+        Screen.SetResolution(1920, 1080,true);
     }
 
     public void ActiveLevel()
