@@ -15,7 +15,7 @@ public class Spider : InterfaceDisable{
     private bool disable;
     private Coroutine Risveglio;
     private Rigidbody2D rig;
-    private readonly float velocity = 0.2f;
+    private readonly float velocity = 0.3f;
 
     private void Awake()
     {

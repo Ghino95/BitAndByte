@@ -54,7 +54,6 @@ public class ControllerManager: MonoBehaviour
             PausePlayer();
             EventManager.TriggerEvent("Pause");
         }
-        
     }
 
     public void PausePlayer(){
