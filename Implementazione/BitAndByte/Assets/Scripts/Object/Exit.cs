@@ -23,7 +23,7 @@ public class Exit : MonoBehaviour {
         if (collision.CompareTag("Player"))
         {
             ActualPlayer++;
-            if(ActualPlayer == TotalPlayer && Anim.GetBool("OpenDoor")){
+            if(ActualPlayer == TotalPlayer){
                 EventManager.TriggerEvent("AllPlayerExit");
             }
         }

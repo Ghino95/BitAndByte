@@ -27,9 +27,12 @@ public class ControlPlayer : MonoBehaviour {
         EventManager.StartListening("ChangeGravity", ChangeGravity);
     }
 
-	
-	// Update is called once per frame
-	void Update () {
+    private void OnDestroy()
+    {
+        EventManager.StopListening("ChangeGravity", ChangeGravity);
+    }
+
+    void Update () {
         if (Input.GetButtonDown("Jump") && grounded)
         {
             rig.velocity = new Vector2(rig.velocity.x, rig.velocity.y + invert*jumpForce);
@@ -42,7 +45,7 @@ public class ControlPlayer : MonoBehaviour {
     {
         move = rig.velocity;
         move.x = 0;
-        rig.velocity = move;
+        rig.velocity.Set(0.0f, rig.velocity.y);
     }
 
     private void ChangeGravity()

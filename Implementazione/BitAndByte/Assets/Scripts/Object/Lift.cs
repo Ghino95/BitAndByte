@@ -8,19 +8,26 @@ public class Lift : InferfaceEffect
     private Transform tr;
     private Vector3 start;
     public Vector3 target;
-    private Rigidbody2D rig;
     public bool triggered = false;
     private bool end;
 
 
     private Vector3 temp;
 
+    private int invert;
+
     private void Awake()
     {
         tr = GetComponent<Transform>();
         start = tr.position;
-        rig = GetComponent<Rigidbody2D>();
         end = false;
+        invert = 1;
+        EventManager.StartListening("ChangeGravity", ChangeGravity);
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.StopListening("ChangeGravity", ChangeGravity);
     }
 
     void Update()
@@ -30,12 +37,13 @@ public class Lift : InferfaceEffect
     }
 
     IEnumerator Move(){
-        if ((triggered && !end) || (rig.velocity != Vector2.zero))
+        if ((triggered && !end))
         {
-            rig.velocity = (target - tr.position).normalized * 3.0f;
+            tr.position = Vector3.MoveTowards(tr.position, target, 0.05f);
+
+
             if ((tr.position - target).magnitude < 0.05f )
             {
-                rig.velocity = Vector2.zero;
                 temp = target;
                 target = start;
                 start = temp;
@@ -47,9 +55,28 @@ public class Lift : InferfaceEffect
 
     }
 
+
     public override void PerformEffect(GameObject oggetto)
     {
         triggered = true;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if ((tr.position.y - collision.transform.position.y)*invert < 0)
+        {
+            collision.transform.parent = tr;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        collision.transform.parent = null;
+    }
+
+    private void ChangeGravity()
+    {
+        invert *= -1;
     }
 
 }

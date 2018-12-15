@@ -16,6 +16,11 @@ public class ChangeGravityObject : InferfaceEffect {
         EventManager.StartListening("ChangeGravity", ChangeGravity);
     }
 
+    private void OnDestroy()
+    {
+        EventManager.StopListening("ChangeGravity", ChangeGravity);
+    }
+
     private void ChangeGravity()
     {
         rig.gravityScale *= -1;

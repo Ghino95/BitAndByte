@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour {
 
     private void WinLevel(){
         if(HaveKey){
+            HaveKey = false;
             SceneManager.LoadScene(scenes.GoToNextLevel(SceneManager.GetActiveScene().name));
         }
 
@@ -46,10 +47,12 @@ public class GameManager : MonoBehaviour {
 
     private void ResetLevel()
     {
+        HaveKey = false;
         SceneManager.LoadScene(scenes.GetCurrentLevel(SceneManager.GetActiveScene().name));
     }
 
     private void GoMenu(){
+        HaveKey = false;
         SceneManager.LoadScene(scenes.MainMenu());
     }
 
