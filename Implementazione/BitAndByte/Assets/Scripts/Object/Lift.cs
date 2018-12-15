@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Lift : InferfaceEffect
 {
@@ -22,7 +23,6 @@ public class Lift : InferfaceEffect
         end = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         StartCoroutine(Move());
@@ -51,8 +51,5 @@ public class Lift : InferfaceEffect
     {
         triggered = true;
     }
-
-
-
 
 }

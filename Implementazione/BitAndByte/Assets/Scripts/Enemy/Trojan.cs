@@ -26,7 +26,7 @@ public class Trojan : InterfaceDisable{
         tr = GetComponent<Transform>();
         Sprite = GetComponent<SpriteRenderer>();
         posX = tr.position.x;
-        ObstacleLayer = LayerMask.GetMask("Player");
+        ObstacleLayer = LayerMask.GetMask("Player", "Default");
         StartFlipX = Sprite.flipX;
         disable = false;
     }

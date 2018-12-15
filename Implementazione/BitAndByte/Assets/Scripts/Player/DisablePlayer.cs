@@ -6,9 +6,11 @@ public class DisablePlayer : MonoBehaviour {
 
     private List<MonoBehaviour> scripts;
     private Rigidbody2D rig;
+    public bool isActive;
 
     private void Awake()
     {
+        isActive = true;
         scripts = new List<MonoBehaviour>();
         scripts.AddRange(GetComponentsInChildren<MonoBehaviour>());
         scripts.Remove(this);
@@ -24,7 +26,7 @@ public class DisablePlayer : MonoBehaviour {
         foreach(MonoBehaviour script in scripts){
             script.enabled = false;
         }
-
+        isActive = false;
         rig.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
 
     }
@@ -36,7 +38,7 @@ public class DisablePlayer : MonoBehaviour {
             script.enabled = true;
         }
         rig.drag = 0.0f;
-
+        isActive = true;
         rig.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 

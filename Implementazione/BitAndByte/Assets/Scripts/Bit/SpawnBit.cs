@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnBit : InferfaceEffect {
+public class SpawnBit : MonoBehaviour {
 
     public GameObject obj;
     private Transform tr;
@@ -16,18 +16,17 @@ public class SpawnBit : InferfaceEffect {
         bit = Instantiate(obj, tr.position, Quaternion.identity);
     }
 
-
-    public override void PerformEffect(GameObject oggetto)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Shot temp = oggetto.GetComponent<Shot>();
-        if(temp != null){
+        Shot temp = collision.GetComponent<Shot>();
+        if (temp != null && !temp.isActiveBit())
+        {
             Destroy(bit);
             bit = null;
             col.enabled = false;
             temp.EnableBit();
-            Invoke("Spawn", 10.0f);
+            Invoke("Spawn", 5.0f);
         }
-
     }
 
     void Spawn()

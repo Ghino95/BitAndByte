@@ -30,26 +30,13 @@ public class ControlPlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-        /*move = rig.velocity;
-
-        move.x = Input.GetAxis("Horizontal") * maxVelocity;
-
-        rig.velocity = move;*/
-
-
         if (Input.GetButtonDown("Jump") && grounded)
         {
-            rig.velocity = new Vector2(rig.velocity.x, invert* jumpForce);
+            rig.velocity = new Vector2(rig.velocity.x, rig.velocity.y + invert*jumpForce);
         }
         rig.velocity = new Vector2(Input.GetAxis("Horizontal") * maxVelocity, rig.velocity.y);
 
-
-
     }
-
-
-
 
     private void OnDisable()
     {
@@ -61,7 +48,7 @@ public class ControlPlayer : MonoBehaviour {
     private void ChangeGravity()
     {
         invert *= -1;
-        rig.gravityScale = invert;
+        rig.gravityScale = invert == 1 ? 1.0f : -0.8f;
         if (invert == 1)
         {
             tr.rotation = Quaternion.Euler(0,0,0);

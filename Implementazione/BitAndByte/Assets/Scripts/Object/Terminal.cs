@@ -24,7 +24,7 @@ public class Terminal : MonoBehaviour {
 
     private void Update()
     {
-        if (!interact && player != null && Input.GetButtonDown("Interact")){
+        if (!interact && player != null && player.GetComponent<DisablePlayer>().isActive == true && Input.GetButtonDown("Interact")){
             player.GetComponent<DisablePlayer>().Disable();
             ControllerManager.instance.enabled = false;
             count = 0;

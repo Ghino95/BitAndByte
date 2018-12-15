@@ -17,23 +17,6 @@ public class ChangeGravity : InferfaceEffect {
         Effect.SetActive(false);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        rig = collision.gameObject.GetComponent<Rigidbody2D>();
-        if(rig != null && rig.bodyType == RigidbodyType2D.Dynamic){
-            rig.gravityScale = -1.0f;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        rig = collision.gameObject.GetComponent<Rigidbody2D>();
-        if (rig != null && rig.bodyType == RigidbodyType2D.Dynamic)
-        {
-            rig.gravityScale = 1.0f;
-        }
-    }
-
     public override void PerformEffect(GameObject oggetto)
     {
         col.enabled = true;
@@ -43,7 +26,6 @@ public class ChangeGravity : InferfaceEffect {
     public override void DisableEffect(GameObject oggetto)
     {
         col.enabled = false;
-
         Effect.SetActive(false);
     }
 

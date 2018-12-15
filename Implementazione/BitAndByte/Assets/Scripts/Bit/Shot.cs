@@ -59,4 +59,9 @@ public class Shot: MonoBehaviour
         anim.SetBool("Power", true);
         effect.Play();
     }
+
+    public bool isActiveBit()
+    {
+        return HaveBit;
+    }
 }

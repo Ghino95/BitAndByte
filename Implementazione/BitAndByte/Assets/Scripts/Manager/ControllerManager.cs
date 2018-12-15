@@ -45,15 +45,23 @@ public class ControllerManager: MonoBehaviour
     {
 
         if(Input.GetButtonDown("Swap")){
-            players[playerEnable].Disable();
-            playerEnable = (playerEnable +1) % players.Count;
-            players[playerEnable].Enable();
-            CameraMobile.target = players[playerEnable].gameObject.GetComponent<Renderer>();
+            ChangePlayer();
         }
         if(Input.GetButtonDown("Pause")){
             PausePlayer();
             EventManager.TriggerEvent("Pause");
         }
+    }
+
+    private void ChangePlayer()
+    {
+        players[playerEnable].Disable();
+        do
+        {
+            playerEnable = (playerEnable + 1) % players.Count;
+        }while (!players[playerEnable].CompareTag("Player"));
+        players[playerEnable].Enable();
+        CameraMobile.target = players[playerEnable].gameObject.GetComponent<Renderer>();
     }
 
     public void PausePlayer(){
