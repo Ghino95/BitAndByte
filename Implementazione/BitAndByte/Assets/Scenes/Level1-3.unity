@@ -338,8 +338,9 @@ GameObject:
   - component: {fileID: 405613276}
   - component: {fileID: 405613278}
   - component: {fileID: 405613277}
+  - component: {fileID: 405613279}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: Jump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -360,8 +361,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.13, y: -7.14}
-  m_SizeDelta: {x: 0.922, y: 0.87}
+  m_AnchoredPosition: {x: 0.467, y: -7.203}
+  m_SizeDelta: {x: 0.922, y: 0.463}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &405613277
 MonoBehaviour:
@@ -397,6 +398,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 405613275}
   m_CullTransparentMesh: 0
+--- !u!114 &405613279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 405613275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec21fd40ca6c043a2bf4ebb1789d8491, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ImagesKey: {fileID: 11400000, guid: d329ab5075527459cb57b1f08eff0d74, type: 2}
 --- !u!1 &435480710
 GameObject:
   m_ObjectHideFlags: 0
@@ -24639,7 +24652,7 @@ Tilemap:
   - first: {x: -4, y: 3, z: 0}
     second:
       m_TileIndex: 7
-      m_TileSpriteIndex: 7
+      m_TileSpriteIndex: 11
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -57350,16 +57363,16 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 21300080, guid: 498daac42687c43f883d98bad1983bb0, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: 21300016, guid: 498daac42687c43f883d98bad1983bb0, type: 3}
   - m_RefCount: 1
@@ -57533,6 +57546,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &804964893
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 2DxFX/Standard/GoldFX
+  m_Shader: {fileID: 4800000, guid: e119c2182318cab46b7ce5b0e7bc3e15, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Alpha: 0
+    - _ColorMask: 15
+    - _Distortion: 0.1
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &820374478
 Prefab:
   m_ObjectHideFlags: 0
@@ -57773,39 +57819,6 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!21 &947082431
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 2DxFX/Standard/GoldFX
-  m_Shader: {fileID: 4800000, guid: e119c2182318cab46b7ce5b0e7bc3e15, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _Alpha: 0
-    - _ColorMask: 15
-    - _Distortion: 0.1
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1009980367
 Prefab:
   m_ObjectHideFlags: 0
@@ -58041,8 +58054,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.25, y: -6.97}
-  m_SizeDelta: {x: 4.022, y: 1.388}
+  m_AnchoredPosition: {x: 0.467, y: -6.881}
+  m_SizeDelta: {x: 2.8973, y: 1.388}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1281456350
 MonoBehaviour:
@@ -58076,9 +58089,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'You can use the Terminal to change your surroundings by pressing
-
-    after interacting with it'
+  m_Text: You can use the Terminal to change your surroundings, after interacting
+    with it, by pressing
 --- !u!222 &1281456351
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -58514,8 +58526,9 @@ GameObject:
   - component: {fileID: 1793437420}
   - component: {fileID: 1793437422}
   - component: {fileID: 1793437421}
+  - component: {fileID: 1793437423}
   m_Layer: 5
-  m_Name: Image
+  m_Name: ActivePower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58573,6 +58586,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1793437419}
   m_CullTransparentMesh: 0
+--- !u!114 &1793437423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1793437419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec21fd40ca6c043a2bf4ebb1789d8491, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ImagesKey: {fileID: 11400000, guid: d329ab5075527459cb57b1f08eff0d74, type: 2}
 --- !u!1001 &1877921612
 Prefab:
   m_ObjectHideFlags: 0
@@ -58750,8 +58775,9 @@ GameObject:
   - component: {fileID: 2012129481}
   - component: {fileID: 2012129483}
   - component: {fileID: 2012129482}
+  - component: {fileID: 2012129484}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Interact
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58809,3 +58835,15 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2012129480}
   m_CullTransparentMesh: 0
+--- !u!114 &2012129484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2012129480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec21fd40ca6c043a2bf4ebb1789d8491, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ImagesKey: {fileID: 11400000, guid: d329ab5075527459cb57b1f08eff0d74, type: 2}
