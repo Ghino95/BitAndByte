@@ -24,7 +24,7 @@ public class Terminal : MonoBehaviour {
 
     private void Update()
     {
-        if (!interact && player != null && player.GetComponent<DisablePlayer>().isActive == true && Input.GetButtonDown("Interact")){
+        /*if (!interact && player != null && player.GetComponent<DisablePlayer>().isActive == true && Input.GetButtonDown("Interact")){
             player.GetComponent<DisablePlayer>().Disable();
             ControllerManager.instance.enabled = false;
             count = 0;
@@ -44,6 +44,13 @@ public class Terminal : MonoBehaviour {
         else if (interact && Input.GetButtonDown("Jump"))
         {
             lasers[count].PerformEffect(null);
+        }*/
+        if (player != null && player.GetComponent<DisablePlayer>().isActive == true && Input.GetButtonDown("Interact"))
+        {
+            foreach (InferfaceEffect temp in lasers)
+            {
+                temp.PerformEffect(null);
+            }
         }
 
     }
