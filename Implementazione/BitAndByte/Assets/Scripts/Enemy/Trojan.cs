@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class Trojan : InterfaceDisable{
 
-    public float MaxDistanza;
-
-
     private LayerMask ObstacleLayer;
     private Rigidbody2D rig;
     private RaycastHit2D hit;
     private Transform tr;
     private float posX;
+    private float posXFinale;
     private SpriteRenderer Sprite;
     private readonly float velocity = 5.0f;
     private Vector3 Direzione;
     private bool StartFlipX;
     private bool disable;
     private Coroutine Risveglio;
+    private bool Carica;
+    private int Modificatore;
+    public BoxCollider2D AngoloVisione;
+    public BoxCollider2D ColliderTrojan;
 
 
     private void Awake()
@@ -25,34 +27,41 @@ public class Trojan : InterfaceDisable{
         rig = GetComponent<Rigidbody2D>();
         tr = GetComponent<Transform>();
         Sprite = GetComponent<SpriteRenderer>();
+        StartFlipX = Sprite.flipX;
         posX = tr.position.x;
         ObstacleLayer = LayerMask.GetMask("Player", "Default");
-        StartFlipX = Sprite.flipX;
         disable = false;
+        Carica = false;
+        Modificatore = Sprite.flipX ? -1 : 1;
+        posXFinale = StartFlipX ? posX - (AngoloVisione.size.x + ColliderTrojan.size.x / 2) : posX + (AngoloVisione.size.x + ColliderTrojan.size.x / 2);
     }
 
     private void Update()
     {
-
-
         if (!disable)
         {
-            Direzione = !Sprite.flipX ? tr.right : -tr.right;
-            hit = Physics2D.Raycast(tr.position, Direzione, MaxDistanza,ObstacleLayer);
-            if (hit.collider != null && hit.collider.CompareTag("Player"))
+            if (Carica && Mathf.Abs(tr.position.x - posXFinale) > 0.05f)
             {
+                Direzione = !Sprite.flipX ? tr.right : -tr.right;
                 rig.velocity = (Direzione).normalized * velocity;
-            }
-            else if (Mathf.Abs(tr.position.x - posX) > 0.1f)
+            }else if (Mathf.Abs(tr.position.x - posX) > 0.05f)
             {
-                Sprite.flipX = !StartFlipX;
-                rig.velocity = (Vector2.right * (posX - tr.position.x)).normalized * velocity / 5;
+
+                Sprite.flipX = tr.position.x > posX;
+
+                //Sprite.flipX = !StartFlipX;
+                Modificatore = Sprite.flipX ? -1 : 1;
+                Direzione = !Sprite.flipX ? tr.right : -tr.right;
+                rig.velocity = (tr.right * (posX - tr.position.x)).normalized * velocity / 5;
             }
             else
             {
                 Sprite.flipX = StartFlipX;
+                Modificatore = Sprite.flipX ? -1 : 1;
                 rig.velocity = Vector2.zero;
             }
+
+            AngoloVisione.offset = new Vector2(Modificatore * Mathf.Abs(AngoloVisione.offset.x), AngoloVisione.offset.y);
         }else{
             rig.velocity = Vector2.zero;
         }
@@ -83,6 +92,20 @@ public class Trojan : InterfaceDisable{
             StopCoroutine(Risveglio);
             Risveglio = null;
         }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            hit = Physics2D.Raycast(tr.position, collision.transform.position - tr.position, float.PositiveInfinity, ObstacleLayer);
+            Carica = hit.collider != null && hit.collider.CompareTag("Player");
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Carica &= !collision.CompareTag("Player");
     }
 
 
