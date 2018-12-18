@@ -33,10 +33,12 @@ public class Trojan : InterfaceDisable{
 
     private void Update()
     {
+
+
         if (!disable)
         {
             Direzione = !Sprite.flipX ? tr.right : -tr.right;
-            hit = Physics2D.Raycast(tr.position, Direzione, MaxDistanza, ObstacleLayer);
+            hit = Physics2D.Raycast(tr.position, Direzione, MaxDistanza,ObstacleLayer);
             if (hit.collider != null && hit.collider.CompareTag("Player"))
             {
                 rig.velocity = (Direzione).normalized * velocity;
@@ -63,6 +65,7 @@ public class Trojan : InterfaceDisable{
         }
 
     }
+
 
     public override void ActiveVirus()
     {

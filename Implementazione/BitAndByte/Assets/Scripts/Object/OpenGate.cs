@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class OpenGate : MonoBehaviour {
 
-    public GameObject Prison;
-    public DiagolImages Images;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player")){
+            GetComponent<SpriteRenderer>().flipX = true;
             EventManager.TriggerEvent("OpenJail");
-            DialogManager.instance.StartDialog(Images, Prison);
-            Prison.tag = "Player";
-            Destroy(gameObject);
         }
     }
 

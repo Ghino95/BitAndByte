@@ -7,7 +7,7 @@ public class ShotBit : MonoBehaviour
     private Rigidbody2D rig;
     private Transform tr;
 
-    private float velocity = 10.0f;
+    private readonly float velocity = 10.0f;
 
     private void Awake()
     {

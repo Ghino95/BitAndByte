@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Gabbia : MonoBehaviour {
 
+    public GameObject Prison;
+    public DiagolImages Images;
 
     private void Awake()
     {
@@ -11,6 +13,8 @@ public class Gabbia : MonoBehaviour {
     }
 
     private void OpenJail(){
+        DialogManager.instance.StartDialog(Images, Prison);
+        Prison.tag = "Player";
         Destroy(gameObject);
     }
 

@@ -22,6 +22,14 @@ public class Resident : InterfaceDisable {
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            EventManager.TriggerEvent("GameOver");
+        }
+    }
+
     public override void DisableVirus()
     {
         luce.enabled = false;
