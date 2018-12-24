@@ -14,14 +14,13 @@ public class Lift : InferfaceEffect
 
     private Vector3 temp;
 
-    private int invert;
+    public int invert = 1;
 
     private void Awake()
     {
         tr = GetComponent<Transform>();
         start = tr.position;
         end = false;
-        invert = 1;
         EventManager.StartListening("ChangeGravity", ChangeGravity);
     }
 
