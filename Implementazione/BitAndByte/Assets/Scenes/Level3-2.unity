@@ -13377,7 +13377,7 @@ Tilemap:
   - first: {x: 1, y: 5, z: 0}
     second:
       m_TileIndex: 20
-      m_TileSpriteIndex: 20
+      m_TileSpriteIndex: 23
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -13782,7 +13782,7 @@ Tilemap:
   - first: {x: 1, y: 6, z: 0}
     second:
       m_TileIndex: 21
-      m_TileSpriteIndex: 21
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -16651,14 +16651,14 @@ Tilemap:
     m_Data: {fileID: 21300008, guid: fa3d61ef123044ab484892b374ac8bd7, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300016, guid: fa3d61ef123044ab484892b374ac8bd7, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300060, guid: fa3d61ef123044ab484892b374ac8bd7, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 21300024, guid: fa3d61ef123044ab484892b374ac8bd7, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300060, guid: fa3d61ef123044ab484892b374ac8bd7, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 1042
     m_Data:
@@ -17540,6 +17540,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1590845988}
   - component: {fileID: 1590845987}
+  - component: {fileID: 1590845986}
   m_Layer: 0
   m_Name: Spot Light (4)
   m_TagString: Untagged
@@ -17547,6 +17548,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1590845986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1590845985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3e955d41867a428ca937d526cf08740, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!108 &1590845987
 Light:
   m_ObjectHideFlags: 0
@@ -17810,7 +17822,7 @@ LineRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ec597180bc5ae4fadb4bab2ffbd45814, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
