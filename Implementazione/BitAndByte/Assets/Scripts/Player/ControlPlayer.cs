@@ -9,13 +9,11 @@ public class ControlPlayer : MonoBehaviour {
     public float maxVelocity = 6.0f;
     [Header("Velocità del salto")]
     public float jumpForce = 6.0f;
-    [Header("Contatto con il terreno")]
-    public bool grounded = false;
 
     private Rigidbody2D rig;
     private Vector2 move;
     private Transform tr;
-
+    private Contact Piedi;
     private int invert = 1;
 
 
@@ -24,6 +22,7 @@ public class ControlPlayer : MonoBehaviour {
     {
         rig = GetComponent<Rigidbody2D>();
         tr = GetComponent<Transform>();
+        Piedi = GetComponentInChildren<Contact>();
         EventManager.StartListening("ChangeGravity", ChangeGravity);
     }
 
@@ -33,7 +32,7 @@ public class ControlPlayer : MonoBehaviour {
     }
 
     void Update () {
-        if (Input.GetButtonDown("Jump") && grounded)
+        if (Input.GetButtonDown("Jump") && Piedi.Grounded)
         {
             rig.velocity = new Vector2(rig.velocity.x, rig.velocity.y + invert*jumpForce);
         }
@@ -45,7 +44,7 @@ public class ControlPlayer : MonoBehaviour {
     {
         move = rig.velocity;
         move.x = 0;
-        rig.velocity.Set(0.0f, rig.velocity.y);
+        rig.velocity = move;
     }
 
     private void ChangeGravity()

@@ -4,30 +4,28 @@ using UnityEngine;
 
 public class Wall : InferfaceEffect{
 
+    public bool Init;
+
     private Animator anim;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        
+        anim.SetBool("Init", Init);
+        anim.SetBool("Perform", !Init);
+
     }
 
     public override void PerformEffect(GameObject oggetto)
     {
-       //GetComponent<Collider2D>().enabled = false;
-        anim.SetTrigger("Activate");
+        //anim.SetTrigger("ChangeState");
+        anim.SetBool("Perform", Init);
     }
 
     public override void DisableEffect(GameObject oggetto)
     {
-        this.gameObject.SetActive(true);
-        //GetComponent<Collider2D>().enabled = true;
-        anim.SetTrigger("Deactivate");
-    }
-
-    private void DeactivateWall()
-    {
-        this.gameObject.SetActive(false);
+        //anim.SetTrigger("ChangeState");
+        anim.SetBool("Perform", !Init);
     }
 
 

@@ -16,6 +16,7 @@ public class Exit : MonoBehaviour {
         Anim = GetComponent<Animator>();
         Anim.SetInteger("Level", Mondo);
         EventManager.StartListening("CatchKey",OpenGate);
+        EventManager.StartListening("DecatchKey", CloseGate);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -40,8 +41,14 @@ public class Exit : MonoBehaviour {
         Anim.SetBool("OpenDoor",true);
     }
 
+    private void CloseGate()
+    {
+        Anim.SetBool("OpenDoor", false);
+    }
+
     private void OnDestroy()
     {
         EventManager.StopListening("CatchKey", OpenGate);
+        EventManager.StopListening("DecatchKey", CloseGate);
     }
 }

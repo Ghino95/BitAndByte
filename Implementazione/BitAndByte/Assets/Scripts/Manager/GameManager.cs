@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour {
             EventManager.StartListening("AllPlayerExit", WinLevel);
             EventManager.StartListening("GameOver", ResetLevel);
             EventManager.StartListening("Exit", GoMenu);
+            EventManager.StartListening("DecatchKey", DecatchKey);
         }
         else
         {
@@ -35,6 +36,11 @@ public class GameManager : MonoBehaviour {
 
     private void CatchKey(){
         HaveKey = true;
+    }
+
+    private void DecatchKey()
+    {
+        HaveKey = false;
     }
 
     private void WinLevel(){

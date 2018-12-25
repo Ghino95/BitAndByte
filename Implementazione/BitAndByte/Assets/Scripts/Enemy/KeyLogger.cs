@@ -4,26 +4,42 @@ using UnityEngine;
 
 public class KeyLogger : MonoBehaviour {
 
-    public GameObject Copia;
+    public DisablePlayer Target;
 
-    private Rigidbody2D RigidCopia;
+    private float maxVelocity;
+    private float jumpForce;
     private Rigidbody2D rig;
+    private Contact Piedi;
+    private Animator anim;
+    private Animator AnimTarget;
+
 
     private void Awake()
     {
-        RigidCopia = Copia.GetComponent<Rigidbody2D>();
         rig = GetComponent<Rigidbody2D>();
+        Piedi = GetComponentInChildren<Contact>();
+        anim = GetComponent<Animator>();
+        AnimTarget = Target.gameObject.GetComponent<Animator>();
+        maxVelocity = Target.GetComponent<ControlPlayer>().maxVelocity;
+        jumpForce = Target.GetComponent<ControlPlayer>().jumpForce;
     }
 
-    private void LateUpdate()
+    void Update()
     {
-        if (RigidCopia.velocity.y != 0)
+        if (Target.isActive)
         {
-            rig.velocity = new Vector2(RigidCopia.velocity.x, -RigidCopia.velocity.y);
+            if (Input.GetButtonDown("Jump") && Piedi.Grounded)
+            {
+                rig.velocity = new Vector2(rig.velocity.x, rig.velocity.y - jumpForce);
+            }
+            rig.velocity = new Vector2(Input.GetAxis("Horizontal") * maxVelocity, rig.velocity.y);
         }
         else
         {
-            rig.velocity = new Vector2(RigidCopia.velocity.x, rig.velocity.y);
+            rig.velocity = new Vector2(0.0f, rig.velocity.y);
         }
+        anim.SetBool("Small", AnimTarget.GetBool("Small"));
+
     }
+
 }

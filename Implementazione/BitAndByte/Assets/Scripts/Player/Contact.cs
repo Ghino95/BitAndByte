@@ -4,20 +4,20 @@ using System.Collections;
 public class Contact : MonoBehaviour
 {
 
-    private ControlPlayer parent;
+    public bool Grounded;
 
     private void Awake()
     {
-        parent = transform.parent.gameObject.GetComponent<ControlPlayer>();
+        Grounded = false;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        parent.grounded = true;
+        Grounded = true;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        parent.grounded = false;
+        Grounded = false;
     }
 }
