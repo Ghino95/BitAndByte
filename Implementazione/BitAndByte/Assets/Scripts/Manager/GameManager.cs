@@ -17,15 +17,17 @@ public class GameManager : MonoBehaviour {
 
     private void Awake()
     {
+        CustomDictionaryLevel temp = scenes.GetCurrentLevel(SceneManager.GetActiveScene().name);
+        SoundManager.instance.StartBackgroundMusic(temp.Audio);
         if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
             EventManager.StartListening("CatchKey", CatchKey);
             EventManager.StartListening("AllPlayerExit", WinLevel);
-            EventManager.StartListening("GameOver", ResetLevel);
             EventManager.StartListening("Exit", GoMenu);
             EventManager.StartListening("DecatchKey", DecatchKey);
+            EventManager.StartListening("ResetLevel", ResetLevel);
         }
         else
         {
@@ -45,20 +47,25 @@ public class GameManager : MonoBehaviour {
     private void WinLevel(){
         if(HaveKey){
             HaveKey = false;
-            SceneManager.LoadScene(scenes.GoToNextLevel(SceneManager.GetActiveScene().name));
+            CustomDictionaryLevel temp = scenes.GoToNextLevel(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(temp.Level);
+            //SoundManager.instance.StartBackgroundMusic(temp.Audio);
         }
-
     }
 
     private void ResetLevel()
     {
         HaveKey = false;
-        SceneManager.LoadScene(scenes.GetCurrentLevel(SceneManager.GetActiveScene().name));
+        CustomDictionaryLevel temp = scenes.GetCurrentLevel(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(temp.Level);
+        //SoundManager.instance.StartBackgroundMusic(temp.Audio);
     }
 
     private void GoMenu(){
         HaveKey = false;
-        SceneManager.LoadScene(scenes.MainMenu());
+        CustomDictionaryLevel temp = scenes.MainMenu();
+        SceneManager.LoadScene(temp.Level);
+        //SoundManager.instance.StartBackgroundMusic(temp.Audio);
     }
 
 

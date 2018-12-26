@@ -6,15 +6,18 @@ using UnityEngine.UI;
 public class HUD : MonoBehaviour {
 
     public GameObject MenuPause;
+    public GameObject DeathScreen;
 
     private void Awake()
     {
         EventManager.StartListening("Pause", OpenMenuPause);
+        EventManager.StartListening("GameOver", OpenDeath);
     }
 
     private void OnDestroy()
     {
         EventManager.StopListening("Pause", OpenMenuPause);
+        EventManager.StopListening("GameOver", OpenDeath);
     }
 
 
@@ -25,10 +28,18 @@ public class HUD : MonoBehaviour {
         EventManager.TriggerEvent("ResumePlayer");
     }
 
+    private void OpenDeath()
+    {
+        Time.timeScale = 0;
+        EventManager.TriggerEvent("PausePlayer");
+        StartCoroutine(OpenMenuAfter());
+        //DeathScreen.SetActive(true);
+    }
+
     public void Restart()
     {
         Time.timeScale = 1;
-        EventManager.TriggerEvent("GameOver");
+        EventManager.TriggerEvent("ResetLevel");
     }
 
     public void Menu()
@@ -40,7 +51,16 @@ public class HUD : MonoBehaviour {
     public void OpenMenuPause()
     {
         Time.timeScale = 0;
+        EventManager.TriggerEvent("PausePlayer");
         MenuPause.SetActive(true);
     }
+
+    private IEnumerator OpenMenuAfter()
+    {
+        yield return new WaitForSecondsRealtime(1.0f);
+        DeathScreen.SetActive(true);
+        yield return null;
+    }
+
 
 }

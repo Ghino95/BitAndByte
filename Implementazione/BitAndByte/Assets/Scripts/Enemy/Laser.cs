@@ -24,9 +24,6 @@ public class Laser : MonoBehaviour {
         if(hit.collider != null){
             Line.SetPosition(1, tr.position);
             Line.SetPosition(0, hit.point);
-            /*if(hit.collider.CompareTag("Player")){
-                EventManager.TriggerEvent("GameOver");
-            }*/
         }
         col.offset = new Vector2(-(Line.GetPosition(0) - Line.GetPosition(1)).magnitude/2 ,0);
         col.size = new Vector2((Line.GetPosition(0) - Line.GetPosition(1)).magnitude, 0.01f);

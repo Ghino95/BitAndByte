@@ -66,10 +66,12 @@ public class ControllerManager: MonoBehaviour
 
     public void PausePlayer(){
         players[playerEnable].Disable();
+        enabled = false;
     }
 
     public void ResumePlayer(){
         players[playerEnable].Enable();
+        enabled = true;
     }
 
 }

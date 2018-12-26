@@ -294,9 +294,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0baf60ab677848f7a88447c438be803, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVelocity: 3
+  maxVelocity: 4
   jumpForce: 5.8
-  grounded: 0
 --- !u!114 &114452799219802836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -371,6 +370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7eaf6644f89e492c97016d0b87ba9e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Grounded: 0
 --- !u!198 &198075698392153152
 ParticleSystem:
   m_ObjectHideFlags: 1

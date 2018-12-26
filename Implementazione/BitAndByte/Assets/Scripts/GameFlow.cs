@@ -6,24 +6,37 @@ using UnityEngine;
 [CreateAssetMenu]
 public class GameFlow : ScriptableObject {
 
-    public string Menu;
-    public string[] levels;
+    public CustomDictionaryLevel Menu;
+    //public string[] levels;
+
+    public List<CustomDictionaryLevel> levels;
 
 
-    public string GetCurrentLevel(string currentScene){
-        int index = Array.FindIndex(levels,(string obj) => obj == currentScene);
-        return levels[index];
+    public CustomDictionaryLevel GetCurrentLevel(string currentScene){
+
+        CustomDictionaryLevel temp = levels.Find((CustomDictionaryLevel obj) => obj.Level == currentScene);
+
+        return temp ?? Menu;
     }
 
-    public string GoToNextLevel(string currentScene)
+    public CustomDictionaryLevel GoToNextLevel(string currentScene)
     {
-        int index = Array.FindIndex(levels, (string obj) => obj == currentScene);
+        int index = levels.FindIndex((CustomDictionaryLevel obj) => obj.Level == currentScene);
         index++;
-        return index >= levels.Length ? Menu : levels[index];
+        return index >= levels.Count ? Menu : levels[index];
     }
 
-    public string MainMenu(){
+    public CustomDictionaryLevel MainMenu(){
         return Menu;
     }
+
+}
+
+
+[System.Serializable]
+public class CustomDictionaryLevel
+{
+    public string Level;
+    public AudioClip Audio;
 
 }
