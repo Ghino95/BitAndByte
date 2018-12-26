@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour {
     }
 
     private bool HaveKey;
-
     public GameFlow scenes;
 
 

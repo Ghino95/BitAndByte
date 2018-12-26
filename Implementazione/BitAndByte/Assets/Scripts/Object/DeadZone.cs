@@ -10,10 +10,9 @@ public class DeadZone : MonoBehaviour {
         {
             EventManager.TriggerEvent("GameOver");
         }
-        else
+        else if(!collision.CompareTag("Activable"))
         {
             Destroy(collision.gameObject);
         }
-        print(collision.name);
     }
 }
