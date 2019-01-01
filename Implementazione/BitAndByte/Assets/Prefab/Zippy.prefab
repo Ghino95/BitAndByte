@@ -223,7 +223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxVelocity: 3
   jumpForce: 5.8
-  grounded: 0
+  Jump: {fileID: 8300000, guid: 89e4d8dd0acc04e91ade225a10d606bb, type: 3}
 --- !u!114 &114246747107711820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -246,6 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7eaf6644f89e492c97016d0b87ba9e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Grounded: 0
 --- !u!114 &114525835246650026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -300,6 +301,7 @@ MonoBehaviour:
   - {x: 1, y: 1, z: 1}
   - {x: 0.5, y: 0.5, z: 1}
   - {x: 1, y: 1.6, z: 1}
+  ZippyAudio: {fileID: 8300000, guid: 6a3d7b30f50e942e9bdf4ed67b709a45, type: 3}
 --- !u!212 &212168568700034638
 SpriteRenderer:
   m_ObjectHideFlags: 1

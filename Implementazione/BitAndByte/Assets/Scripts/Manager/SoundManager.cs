@@ -37,7 +37,7 @@ public class SoundManager : MonoBehaviour {
     private void Init()
     {
         Background = GetComponents<AudioSource>()[0];
-        Background = GetComponents<AudioSource>()[1];
+        Effect = GetComponents<AudioSource>()[1];
         DontDestroyOnLoad(gameObject);
     }
 

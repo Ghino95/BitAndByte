@@ -12,6 +12,7 @@ public class Shot: MonoBehaviour
     public GameObject shot;
     public Transform dx;
     public Transform sx;
+    public AudioClip ShotEffect;
 
     private void Awake()
     {
@@ -26,6 +27,7 @@ public class Shot: MonoBehaviour
         UpdateDirezione();
         if(HaveBit && Input.GetButtonDown("ActivePower")){
             StartCoroutine(Fire());
+            SoundManager.instance.StartEffectMusic(ShotEffect);
         }
 
     }

@@ -10,6 +10,8 @@ public class ControlPlayer : MonoBehaviour {
     [Header("Velocità del salto")]
     public float jumpForce = 6.0f;
 
+    public AudioClip Jump;
+
     private Rigidbody2D rig;
     private Vector2 move;
     private Transform tr;
@@ -35,6 +37,7 @@ public class ControlPlayer : MonoBehaviour {
         if (Input.GetButtonDown("Jump") && Piedi.Grounded)
         {
             rig.velocity = new Vector2(rig.velocity.x, rig.velocity.y + invert*jumpForce);
+            SoundManager.instance.StartEffectMusic(Jump);
         }
         rig.velocity = new Vector2(Input.GetAxis("Horizontal") * maxVelocity, rig.velocity.y);
 

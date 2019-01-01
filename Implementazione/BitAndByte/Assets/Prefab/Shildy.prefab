@@ -279,6 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13330c5e76410474b991613a2f972a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShildyAudio: {fileID: 8300000, guid: ee24077664e1d4cdb9b8f73aa406309e, type: 3}
 --- !u!114 &114359493235762332
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -319,7 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxVelocity: 3
   jumpForce: 5.8
-  grounded: 0
+  Jump: {fileID: 8300000, guid: 89e4d8dd0acc04e91ade225a10d606bb, type: 3}
 --- !u!114 &114581055080079338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -354,6 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7eaf6644f89e492c97016d0b87ba9e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Grounded: 0
 --- !u!212 &212011112844198550
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -6,6 +6,7 @@ public class Gabbia : MonoBehaviour {
 
     public GameObject Prison;
     public DiagolImages Images;
+    public AudioClip CageEffect;
 
     private void Awake()
     {
@@ -13,6 +14,7 @@ public class Gabbia : MonoBehaviour {
     }
 
     private void OpenJail(){
+        SoundManager.instance.StartEffectMusic(CageEffect);
         DialogManager.instance.StartDialog(Images, Prison);
         Prison.tag = "Player";
         Destroy(gameObject);

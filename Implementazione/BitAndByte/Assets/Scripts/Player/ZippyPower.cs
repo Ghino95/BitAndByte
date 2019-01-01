@@ -11,6 +11,7 @@ public class ZippyPower : MonoBehaviour {
     private Transform tr;
     private float[] sizes;
     private RaycastHit2D hit;
+    public AudioClip ZippyAudio;
 
     private void Awake()
     {
@@ -28,11 +29,13 @@ public class ZippyPower : MonoBehaviour {
         if (Other != null && Input.GetButtonDown("Interact"))
         {
             Other.GetComponent<ChangeSize>().ChangeSizeEffect();
+            SoundManager.instance.StartEffectMusic(ZippyAudio);
         }
         if (Input.GetButtonDown("ActivePower"))
         {
             count = CalcolaProssimoStato();
             anim.SetInteger("Size", count);
+            SoundManager.instance.StartEffectMusic(ZippyAudio);
         }
     }
 

@@ -372,6 +372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prison: {fileID: 0}
   Images: {fileID: 11400000, guid: 1d1bf61aabfb4428687a6e8ff2d32797, type: 2}
+  CageEffect: {fileID: 8300000, guid: c3dc03df234a0447a908ee4d94e97c8c, type: 3}
 --- !u!114 &114414786281795490
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -296,6 +296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxVelocity: 4
   jumpForce: 5.8
+  Jump: {fileID: 8300000, guid: 89e4d8dd0acc04e91ade225a10d606bb, type: 3}
 --- !u!114 &114452799219802836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -337,6 +338,7 @@ MonoBehaviour:
   shot: {fileID: 1305361941558088, guid: 422df41f068f14439928987c67145098, type: 2}
   dx: {fileID: 4438022934253438}
   sx: {fileID: 4565552090322690}
+  ShotEffect: {fileID: 8300000, guid: e81b608effb8f4d818231376a3f512dc, type: 3}
 --- !u!114 &114814155335224708
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -5,7 +5,7 @@ using UnityEngine;
 public class GimpyPower : MonoBehaviour {
 
     private _2dxFX_Hologram Effetto;
-
+    public AudioClip GimpEffect;
     private bool ActivePower;
 
     private void Awake()
@@ -25,6 +25,7 @@ public class GimpyPower : MonoBehaviour {
             gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
             ActivePower = !ActivePower;
             Effetto.enabled = true;
+            SoundManager.instance.StartEffectMusic(GimpEffect);
         }
         else if (Input.GetButtonDown("ActivePower") && ActivePower)
         {

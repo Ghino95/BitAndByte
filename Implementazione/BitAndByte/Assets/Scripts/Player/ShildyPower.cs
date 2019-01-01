@@ -8,6 +8,7 @@ public class ShildyPower : MonoBehaviour {
     private bool CanActive = false;
     private Animator anim;
     private SpriteRenderer Area;
+    public AudioClip ShildyAudio;
 
     private void Awake()
     {
@@ -47,6 +48,7 @@ public class ShildyPower : MonoBehaviour {
     }
 
     private IEnumerator Scudo(){
+        SoundManager.instance.StartEffectMusic(ShildyAudio);
         anim.SetBool("ParticolState", true);
         anim.SetTrigger("Power");
         Area.enabled = true;

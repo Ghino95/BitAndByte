@@ -238,6 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7eaf6644f89e492c97016d0b87ba9e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Grounded: 0
 --- !u!114 &114304790685699808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -260,6 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f49821be9d1f4937975f1b7a87afec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GimpEffect: {fileID: 8300000, guid: abbdffb0a167448499ab3b8e796514a6, type: 3}
 --- !u!114 &114867487311931278
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -273,7 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxVelocity: 3
   jumpForce: 5.8
-  grounded: 0
+  Jump: {fileID: 8300000, guid: 89e4d8dd0acc04e91ade225a10d606bb, type: 3}
 --- !u!114 &114919521218030468
 MonoBehaviour:
   m_ObjectHideFlags: 1
