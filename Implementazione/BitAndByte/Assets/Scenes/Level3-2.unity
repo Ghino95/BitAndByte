@@ -4869,7 +4869,7 @@ MonoBehaviour:
   shot: {fileID: 1305361941558088, guid: 422df41f068f14439928987c67145098, type: 2}
   dx: {fileID: 101222471}
   sx: {fileID: 1171688066}
-  ShotEffect: {fileID: 0}
+  ShotEffect: {fileID: 8300000, guid: e81b608effb8f4d818231376a3f512dc, type: 3}
 --- !u!114 &28645541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4922,7 +4922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxVelocity: 4
   jumpForce: 5.8
-  Jump: {fileID: 0}
+  Jump: {fileID: 8300000, guid: 89e4d8dd0acc04e91ade225a10d606bb, type: 3}
 --- !u!50 &28645544
 Rigidbody2D:
   serializedVersion: 4
@@ -5399,7 +5399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28f12d81625c94829b8f4f9bccc9985b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KeyAudio: {fileID: 0}
+  KeyAudio: {fileID: 8300000, guid: aaefa8ce2951c48679a16a396e2e465d, type: 3}
 --- !u!212 &320958873
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6082,7 +6082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13330c5e76410474b991613a2f972a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShildyAudio: {fileID: 0}
+  ShildyAudio: {fileID: 8300000, guid: ee24077664e1d4cdb9b8f73aa406309e, type: 3}
 --- !u!58 &533429661
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6496,7 +6496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxVelocity: 4
   jumpForce: 5.8
-  Jump: {fileID: 0}
+  Jump: {fileID: 8300000, guid: 89e4d8dd0acc04e91ade225a10d606bb, type: 3}
 --- !u!50 &705317807
 Rigidbody2D:
   serializedVersion: 4
@@ -18450,7 +18450,7 @@ MonoBehaviour:
   - {x: 1, y: 1, z: 1}
   - {x: 0.5, y: 0.5, z: 1}
   - {x: 1, y: 1.6, z: 1}
-  ZippyAudio: {fileID: 0}
+  ZippyAudio: {fileID: 8300000, guid: 6a3d7b30f50e942e9bdf4ed67b709a45, type: 3}
 --- !u!114 &2119227944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18503,7 +18503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxVelocity: 4
   jumpForce: 5.8
-  Jump: {fileID: 0}
+  Jump: {fileID: 8300000, guid: 89e4d8dd0acc04e91ade225a10d606bb, type: 3}
 --- !u!50 &2119227947
 Rigidbody2D:
   serializedVersion: 4

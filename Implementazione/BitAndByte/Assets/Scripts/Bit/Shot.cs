@@ -39,10 +39,10 @@ public class Shot: MonoBehaviour
         else
             anim.SetInteger("Shot", -1);
         Instantiate(shot, direzione.position, direzione.rotation);
+        HaveBit = false;
         yield return new WaitForSeconds(0.5f);
         anim.SetBool("ParticolState", false);
         anim.SetInteger("Shot", 0);
-        HaveBit = false;
         effect.Pause();
         effect.Clear();
         anim.SetBool("Power", false);
