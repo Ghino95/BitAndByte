@@ -37,11 +37,13 @@ public class ChangeGravityLevel : MonoBehaviour {
     private void ResumePlayer()
     {
         player.Enable();
+        enabled = true;
     }
 
     private void PausePlayer()
     {
         player.Disable();
+        enabled = false;
     }
 
 

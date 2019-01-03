@@ -70,6 +70,11 @@ public class SoundManager : MonoBehaviour {
         Effect.PlayOneShot(Audio);
     }
 
+    public void StopBackgroundMusic()
+    {
+        Background.Stop();
+    }
+
 
 
 }

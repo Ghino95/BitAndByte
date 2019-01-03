@@ -15,7 +15,7 @@ public class Gabbia : MonoBehaviour {
 
     private void OpenJail(){
         SoundManager.instance.StartEffectMusic(CageEffect);
-        DialogManager.instance.StartDialog(Images, Prison);
+        DialogManager.instance.StartDialog(Images);
         Prison.tag = "Player";
         Destroy(gameObject);
     }

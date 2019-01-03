@@ -11,19 +11,34 @@ public class TestAnim : MonoBehaviour {
 
     private void Awake()
     {
+        invert = 1;
         anim = GetComponent<Animator>();
         rig = GetComponent<Rigidbody2D>();
         anim.SetBool("ParticolState", false);
+        EventManager.StartListening("ChangeGravity", ChangeGravity);
     }
 
-	void FixedUpdate () {
-        invert = rig.gravityScale >= 0 ? 1 : -1;
-        anim.SetInteger("Direzione", invert * Sign(rig.velocity.x));
+    private void OnDestroy()
+    {
+        EventManager.StopListening("ChangeGravity", ChangeGravity);
+    }
+
+    void FixedUpdate () {
+        //invert = rig.gravityScale >= 0 ? 1 : -1;
+        if (rig.velocity.x != 0)
+        {
+            anim.SetInteger("Direzione", invert * Sign(rig.velocity.x));
+        }
     }
 
     private int Sign(float vel)
     {
         return vel < 0 ? -1 : (vel > 0 ? 1 : 0);
+    }
+
+    private void ChangeGravity()
+    {
+        invert *= -1;
     }
 
 }

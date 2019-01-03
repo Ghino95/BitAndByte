@@ -8,6 +8,8 @@ public class HUD : MonoBehaviour {
     public GameObject MenuPause;
     public GameObject DeathScreen;
 
+    public AudioClip Error;
+
     private void Awake()
     {
         EventManager.StartListening("Pause", OpenMenuPause);
@@ -32,8 +34,10 @@ public class HUD : MonoBehaviour {
     {
         Time.timeScale = 0;
         EventManager.TriggerEvent("PausePlayer");
-        StartCoroutine(OpenMenuAfter());
-        //DeathScreen.SetActive(true);
+        //StartCoroutine(OpenMenuAfter());
+        DeathScreen.SetActive(true);
+        SoundManager.instance.StopBackgroundMusic();
+        SoundManager.instance.StartEffectMusic(Error);
     }
 
     public void Restart()

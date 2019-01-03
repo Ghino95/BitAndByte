@@ -16,12 +16,13 @@ public class ControlPlayer : MonoBehaviour {
     private Vector2 move;
     private Transform tr;
     private Contact Piedi;
-    private int invert = 1;
+    private int invert;
 
 
 
     private void Awake()
     {
+        invert = 1;
         rig = GetComponent<Rigidbody2D>();
         tr = GetComponent<Transform>();
         Piedi = GetComponentInChildren<Contact>();

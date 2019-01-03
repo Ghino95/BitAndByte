@@ -48,7 +48,6 @@ public class ControllerManager: MonoBehaviour
             ChangePlayer();
         }
         if(Input.GetButtonDown("Pause")){
-            PausePlayer();
             EventManager.TriggerEvent("Pause");
         }
     }

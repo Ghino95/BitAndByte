@@ -8,7 +8,7 @@ public class Lock : MonoBehaviour {
     {
         if (collision.CompareTag("Enemy"))
         {
-            EventManager.TriggerEvent("DecatchKey");
+            EventManager.TriggerEvent("GameOver");
         }
     }
 }

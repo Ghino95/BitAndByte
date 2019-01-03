@@ -9,7 +9,7 @@ public class TalkPlayer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        DialogManager.instance.StartDialog(Dialogo, gameObject);
+        DialogManager.instance.StartDialog(Dialogo);
 	}
 	
 }
