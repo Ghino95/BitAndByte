@@ -11,9 +11,9 @@ public class TestAnim : MonoBehaviour {
 
     private void Awake()
     {
-        invert = 1;
         anim = GetComponent<Animator>();
         rig = GetComponent<Rigidbody2D>();
+        invert = rig.gravityScale >= 0 ? 1 : -1;
         anim.SetBool("ParticolState", false);
         EventManager.StartListening("ChangeGravity", ChangeGravity);
     }

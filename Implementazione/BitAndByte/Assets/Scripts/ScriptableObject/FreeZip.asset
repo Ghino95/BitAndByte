@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: FreeZip
   m_EditorClassIdentifier: 
   Images:
-  - {fileID: 21300000, guid: 37ff3b5796f1e4f17ba8cac16f1bc136, type: 3}
-  - {fileID: 21300000, guid: 851bd4d827b784ef684deedd9cd38e73, type: 3}
+  - {fileID: 21300000, guid: 2af471bd7d3544eb7bdd9ded068e8ede, type: 3}
+  - {fileID: 21300000, guid: f21d0e34f77214f8884f844180176b08, type: 3}

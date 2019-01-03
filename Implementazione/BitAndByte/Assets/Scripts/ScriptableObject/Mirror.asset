@@ -9,8 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d40286012e10d4aaeb3fb26a4980b20e, type: 3}
-  m_Name: Gravity
+  m_Name: Mirror
   m_EditorClassIdentifier: 
   Images:
-  - {fileID: 21300000, guid: e49d3d3463db34510a87af81450945e2, type: 3}
-  - {fileID: 21300000, guid: 281f6588a06bd4072b31efbcdd117fed, type: 3}
+  - {fileID: 21300000, guid: d07c71fe4e6c3424c8599df76b10fd79, type: 3}
+  - {fileID: 21300000, guid: 545b43798cf1b4297ab2fb7bc3a20a89, type: 3}
