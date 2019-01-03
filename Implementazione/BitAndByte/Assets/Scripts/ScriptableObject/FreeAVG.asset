@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: FreeAVG
   m_EditorClassIdentifier: 
   Images:
-  - {fileID: 21300000, guid: e8bb11a0edfd348deba54af50e2df3c0, type: 3}
-  - {fileID: 21300000, guid: dd8aacdf2beca465fac5b27edc2271da, type: 3}
+  - {fileID: 21300000, guid: aee710532b92c4b0a8a6e91824d2e4fd, type: 3}
+  - {fileID: 21300000, guid: d1f395072b14546edaf99bee4f69f5e2, type: 3}
