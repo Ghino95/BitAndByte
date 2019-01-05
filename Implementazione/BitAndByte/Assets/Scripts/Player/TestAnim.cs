@@ -23,11 +23,15 @@ public class TestAnim : MonoBehaviour {
         EventManager.StopListening("ChangeGravity", ChangeGravity);
     }
 
-    void FixedUpdate () {
-        //invert = rig.gravityScale >= 0 ? 1 : -1;
+    void Update () {
         if (rig.velocity.x != 0)
         {
+            anim.SetBool("Fermo", false);
             anim.SetInteger("Direzione", invert * Sign(rig.velocity.x));
+        }
+        else
+        {
+            anim.SetBool("Fermo",true);
         }
     }
 

@@ -99,7 +99,7 @@ public class Trojan : InterfaceDisable{
         if (collision.CompareTag("Player"))
         {
             hit = Physics2D.Raycast(tr.position, collision.transform.position - tr.position, float.PositiveInfinity, ObstacleLayer);
-            Carica = hit.collider != null && hit.collider.CompareTag("Player");
+            Carica = hit.collider != null && hit.collider.gameObject == collision.gameObject;
         }
     }
 
