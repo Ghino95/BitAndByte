@@ -12,6 +12,7 @@ public class KeyLogger : MonoBehaviour {
     private Contact Piedi;
     private Animator anim;
     private Animator AnimTarget;
+    private int invert;
 
 
     private void Awake()
@@ -22,6 +23,7 @@ public class KeyLogger : MonoBehaviour {
         AnimTarget = Target.gameObject.GetComponent<Animator>();
         maxVelocity = Target.GetComponent<ControlPlayer>().maxVelocity;
         jumpForce = Target.GetComponent<ControlPlayer>().jumpForce;
+        invert = rig.gravityScale >= 0 ? 1 : -1;
     }
 
     void Update()
@@ -39,6 +41,7 @@ public class KeyLogger : MonoBehaviour {
             rig.velocity = new Vector2(0.0f, rig.velocity.y);
         }
         anim.SetBool("Small", AnimTarget.GetBool("Small"));
+        anim.SetInteger("Direzione", invert * AnimTarget.GetInteger("Direzione"));
 
     }
 
