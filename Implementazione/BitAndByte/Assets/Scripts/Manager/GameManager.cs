@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour {
             EventManager.StartListening("Exit", GoMenu);
             EventManager.StartListening("DecatchKey", DecatchKey);
             EventManager.StartListening("ResetLevel", ResetLevel);
+            EventManager.StartListening("NextLevel", NextLevel);
         }
         else
         {
@@ -47,10 +48,17 @@ public class GameManager : MonoBehaviour {
     private void WinLevel(){
         if(HaveKey){
             HaveKey = false;
-            CustomDictionaryLevel temp = scenes.GoToNextLevel(SceneManager.GetActiveScene().name);
-            SceneManager.LoadScene(temp.Level);
+            //CustomDictionaryLevel temp = scenes.GoToNextLevel(SceneManager.GetActiveScene().name);
+            //SceneManager.LoadScene(temp.Level);
             //SoundManager.instance.StartBackgroundMusic(temp.Audio);
+            EventManager.TriggerEvent("Win");
         }
+    }
+
+    private void NextLevel()
+    {
+        CustomDictionaryLevel temp = scenes.GoToNextLevel(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(temp.Level);
     }
 
     private void ResetLevel()

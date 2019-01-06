@@ -67,7 +67,6 @@ public class SoundManager : MonoBehaviour {
 
     public void StartEffectMusic(AudioClip Audio)
     {
-        Effect.Stop();
         Effect.PlayOneShot(Audio);
     }
 

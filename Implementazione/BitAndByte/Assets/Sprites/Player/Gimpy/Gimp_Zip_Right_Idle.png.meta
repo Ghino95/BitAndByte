@@ -1,13 +1,12 @@
 fileFormatVersion: 2
-guid: 0efac791addb947b8b0483a1e31f56ee
+guid: e1b096e0f394d4e5aba87c6876827a2b
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Zippy_Right_Idle_0
-    21300002: Zippy_Right_Idle_1
-    21300004: Zippy_Right_Idle_2
-    21300006: Zippy_Right_Idle_3
-    21300008: Zippy_Right_Idle_4
-    21300010: Zippy_Right_Idle_5
+    21300000: Gimp_Zip_Right_Idle_0
+    21300002: Gimp_Zip_Right_Idle_1
+    21300004: Gimp_Zip_Right_Idle_2
+    21300006: Gimp_Zip_Right_Idle_3
+    21300008: Gimp_Zip_Right_Idle_4
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -134,13 +133,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Zippy_Right_Idle_0
+      name: Gimp_Zip_Right_Idle_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 10
-        width: 87
-        height: 128
+        x: 2
+        y: 21
+        width: 121
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,19 +147,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00c9dd31eed744ef0a2a36f250ac1866
+      spriteID: 9358b320835954a598e993943e527c13
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zippy_Right_Idle_1
+      name: Gimp_Zip_Right_Idle_1
       rect:
         serializedVersion: 2
-        x: 131
-        y: 10
-        width: 87
-        height: 128
+        x: 130
+        y: 21
+        width: 121
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,19 +167,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 495ca7393bd5546adaf414fc3bd60539
+      spriteID: 20ab9682e4da644e98b203e1e2c3111e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zippy_Right_Idle_2
+      name: Gimp_Zip_Right_Idle_2
       rect:
         serializedVersion: 2
-        x: 259
-        y: 10
-        width: 87
-        height: 128
+        x: 258
+        y: 21
+        width: 121
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,19 +187,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff797b901851947e3919a00375c605fc
+      spriteID: 47bf3dbcd3efb448d8eb1052e7600a9c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zippy_Right_Idle_3
+      name: Gimp_Zip_Right_Idle_3
       rect:
         serializedVersion: 2
-        x: 387
-        y: 10
-        width: 87
-        height: 128
+        x: 386
+        y: 21
+        width: 121
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,19 +207,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54adda406fc7c4fbe9f833e7dcc15e02
+      spriteID: 8c6e4034d5ab542f5907cd08c8144c7d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zippy_Right_Idle_4
+      name: Gimp_Zip_Right_Idle_4
       rect:
         serializedVersion: 2
-        x: 515
-        y: 10
-        width: 87
-        height: 128
+        x: 514
+        y: 21
+        width: 121
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,27 +227,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 293bf7cfe4d47408fbd08be36c5d62d0
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zippy_Right_Idle_5
-      rect:
-        serializedVersion: 2
-        x: 642
-        y: 10
-        width: 88
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 91e02751e83a24c4aac61de6da811da2
+      spriteID: c5ab83c67a0b84e47a44b8b3eb0d7cac
       vertices: []
       indices: 
       edges: []
@@ -256,7 +235,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ee791864abe2a419c8313223f4be6d20
+    spriteID: a579274fc1b0b4ff48e4eccfac7af58d
     vertices: []
     indices: 
     edges: []

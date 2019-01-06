@@ -7,6 +7,7 @@ TextureImporter:
     21300004: Zippy_Left_Idle_2
     21300006: Zippy_Left_Idle_3
     21300008: Zippy_Left_Idle_4
+    21300010: Zippy_Left_Idle_5
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -136,9 +137,9 @@ TextureImporter:
       name: Zippy_Left_Idle_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 49
-        width: 88
+        x: 3
+        y: 22
+        width: 87
         height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -147,7 +148,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8847aca02145646f6a3fe93dbf887fc6
+      spriteID: 5fb423d8c759c40a7969878a6d4457c4
       vertices: []
       indices: 
       edges: []
@@ -156,9 +157,9 @@ TextureImporter:
       name: Zippy_Left_Idle_1
       rect:
         serializedVersion: 2
-        x: 149
-        y: 49
-        width: 88
+        x: 131
+        y: 22
+        width: 87
         height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -167,7 +168,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dca93b0a9977b448b944f1cf86d4f381
+      spriteID: 77d376159219245f883b007cc1e7a47c
       vertices: []
       indices: 
       edges: []
@@ -176,9 +177,9 @@ TextureImporter:
       name: Zippy_Left_Idle_2
       rect:
         serializedVersion: 2
-        x: 277
-        y: 49
-        width: 88
+        x: 259
+        y: 22
+        width: 87
         height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -187,7 +188,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62f80ae93e0234cf6a28a9078c444e1f
+      spriteID: 56054aa059ad941c3acb3bbc8eff0142
       vertices: []
       indices: 
       edges: []
@@ -196,9 +197,9 @@ TextureImporter:
       name: Zippy_Left_Idle_3
       rect:
         serializedVersion: 2
-        x: 405
-        y: 49
-        width: 88
+        x: 387
+        y: 22
+        width: 87
         height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -207,7 +208,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5665822fe6b9540b4b6c2e29b1da5ce2
+      spriteID: ffe94b222f03b403da9734a7868928cd
       vertices: []
       indices: 
       edges: []
@@ -216,8 +217,28 @@ TextureImporter:
       name: Zippy_Left_Idle_4
       rect:
         serializedVersion: 2
-        x: 533
-        y: 49
+        x: 515
+        y: 22
+        width: 87
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 811144f395c3e4a6bba9d083e1a8427a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zippy_Left_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 22
         width: 88
         height: 128
       alignment: 0
@@ -227,7 +248,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ceaa18a6c7d6448daa662dde3aeb332
+      spriteID: 80096a45452f34bb480bd9990da0026f
       vertices: []
       indices: 
       edges: []
