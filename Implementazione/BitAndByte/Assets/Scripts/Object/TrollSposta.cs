@@ -15,9 +15,9 @@ public class TrollSposta : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && col.enabled)
         {
-            tr.position += tr.right;
+            tr.position += tr.right/2;
             col.enabled = false;
         }
     }
