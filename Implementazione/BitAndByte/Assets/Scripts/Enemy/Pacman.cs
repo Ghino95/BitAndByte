@@ -16,7 +16,7 @@ public class Pacman : InferfaceEffect {
     private void Update()
     {
         tr.rotation = Quaternion.Euler(0, 0, Quaternion.FromToRotation(Vector3.right, Target.position - tr.position).eulerAngles.z);
-        tr.position = Vector3.MoveTowards(tr.position, Target.position, 0.04f);
+        tr.position = Vector3.MoveTowards(tr.position, Target.position, 0.055f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
