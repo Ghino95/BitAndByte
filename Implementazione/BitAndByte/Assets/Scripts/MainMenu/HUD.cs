@@ -8,7 +8,7 @@ public class HUD : MonoBehaviour {
     public GameObject MenuPause;
     public GameObject DeathScreen;
     public GameObject WinScreen;
-
+    public GameObject Blur;
     public AudioClip Error;
     public AudioClip WinAudio;
 
@@ -31,6 +31,7 @@ public class HUD : MonoBehaviour {
     {
         Time.timeScale = 1;
         MenuPause.SetActive(false);
+        Blur.SetActive(false);
         EventManager.TriggerEvent("ResumePlayer");
     }
 
@@ -39,6 +40,7 @@ public class HUD : MonoBehaviour {
         Time.timeScale = 0;
         EventManager.TriggerEvent("PausePlayer");
         WinScreen.SetActive(true);
+        Blur.SetActive(true);
         SoundManager.instance.StopBackgroundMusic();
         SoundManager.instance.StartEffectMusic(WinAudio);
     }
@@ -48,9 +50,6 @@ public class HUD : MonoBehaviour {
         Time.timeScale = 0;
         EventManager.TriggerEvent("PausePlayer");
         StartCoroutine(OpenMenuAfter());
-        //DeathScreen.SetActive(true);
-        //SoundManager.instance.StopBackgroundMusic();
-        //SoundManager.instance.StartEffectMusic(Error);
     }
 
     public void Continue()
@@ -76,12 +75,14 @@ public class HUD : MonoBehaviour {
         Time.timeScale = 0;
         EventManager.TriggerEvent("PausePlayer");
         MenuPause.SetActive(true);
+        Blur.SetActive(true);
     }
 
     private IEnumerator OpenMenuAfter()
     {
         yield return new WaitForSecondsRealtime(0.2f);
         DeathScreen.SetActive(true);
+        Blur.SetActive(true);
         SoundManager.instance.StopBackgroundMusic();
         SoundManager.instance.StartEffectMusic(Error);
         yield return null;

@@ -8,6 +8,7 @@ public class DialogManager : MonoBehaviour
     private DiagolImages Images;
     private int count;
 
+    public GameObject Blur;
     public GameObject ReadMe;
     public Image CurrentImage;
 
@@ -43,6 +44,7 @@ public class DialogManager : MonoBehaviour
         else
         {
             ReadMe.SetActive(false);
+            Blur.SetActive(false);
             Time.timeScale = 1;
             EventManager.TriggerEvent("ResumePlayer");
         }
@@ -56,6 +58,7 @@ public class DialogManager : MonoBehaviour
         count = 0;
         EventManager.TriggerEvent("PausePlayer");
         ReadMe.SetActive(true);
+        Blur.SetActive(true);
         NextImage();
 
     }
