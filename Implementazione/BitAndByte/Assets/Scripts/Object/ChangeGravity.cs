@@ -8,6 +8,7 @@ public class ChangeGravity : InferfaceEffect {
     private Rigidbody2D rig;
     private Collider2D col;
 
+    public Animator anim;
     public GameObject Effect;
 
     private void Awake()
@@ -21,12 +22,14 @@ public class ChangeGravity : InferfaceEffect {
     {
         col.enabled = true;
         Effect.SetActive(true);
+        anim.SetBool("Active", true);
     }
 
     public override void DisableEffect(GameObject oggetto)
     {
         col.enabled = false;
         Effect.SetActive(false);
+        anim.SetBool("Active", false);
     }
 
 }
