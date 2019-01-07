@@ -46,7 +46,8 @@ public class ZippyPower : MonoBehaviour {
         do
         {
             differenza = sizes[(temp + 1) % 3] - sizes[count];
-            hit = Physics2D.Raycast(tr.position, tr.up, differenza, LayerMask.GetMask("Default"));
+            hit = Physics2D.Raycast(tr.position, tr.up, differenza, LayerMask.GetMask("Default", "Player"));
+
             temp = (temp + 1) % 3;
             if (differenza < 0)
             {

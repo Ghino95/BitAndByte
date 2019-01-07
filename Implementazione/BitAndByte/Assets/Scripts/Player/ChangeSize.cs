@@ -27,7 +27,7 @@ public class ChangeSize : MonoBehaviour {
     {
         if (anim.GetBool("Small"))
         {
-            hit = Physics2D.Raycast(transform.position, transform.up, differenza, LayerMask.GetMask("Default"));
+            hit = Physics2D.Raycast(transform.position, transform.up, differenza, LayerMask.GetMask("Default", "Player"));
             return hit.collider == null;
 
         }
