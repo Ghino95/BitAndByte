@@ -14,7 +14,8 @@ public class Teleport : InferfaceEffect {
 
 
     private IEnumerator Test(GameObject Player){
-        Player.GetComponent<DisablePlayer>().Disable();
+        //Player.GetComponent<DisablePlayer>().Disable();
+        EventManager.TriggerEvent("PausePlayer");
         Animator anim = Player.GetComponent<Animator>();
         anim.SetBool("ParticolState", true);
         anim.SetTrigger("TeleIn");
@@ -25,7 +26,8 @@ public class Teleport : InferfaceEffect {
         anim.SetTrigger("TeleOut");
         yield return new WaitForSeconds(1f);
         anim.SetBool("ParticolState", false);
-        Player.GetComponent<DisablePlayer>().Enable();
+        //Player.GetComponent<DisablePlayer>().Enable();
+        EventManager.TriggerEvent("ResumePlayer");
     }
 
 
