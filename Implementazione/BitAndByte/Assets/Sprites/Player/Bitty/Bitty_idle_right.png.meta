@@ -137,8 +137,8 @@ TextureImporter:
       name: Bitty_idle_right_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 29
+        x: 3
+        y: 26
         width: 88
         height: 128
       alignment: 0
@@ -148,7 +148,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ed5b226d94384397aac5dc5d0cb852c
+      spriteID: b07611af717b541d995e12cca6154626
       vertices: []
       indices: 
       edges: []
@@ -157,8 +157,8 @@ TextureImporter:
       name: Bitty_idle_right_1
       rect:
         serializedVersion: 2
-        x: 130
-        y: 29
+        x: 131
+        y: 26
         width: 88
         height: 128
       alignment: 0
@@ -168,7 +168,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c8aaaefe2cc6434c881cdc4754691c5
+      spriteID: 5278149475aa9498f9eb3c3a1893015b
       vertices: []
       indices: 
       edges: []
@@ -177,8 +177,8 @@ TextureImporter:
       name: Bitty_idle_right_2
       rect:
         serializedVersion: 2
-        x: 258
-        y: 29
+        x: 259
+        y: 26
         width: 88
         height: 128
       alignment: 0
@@ -188,7 +188,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df316275e5fea46228345b90097dedb3
+      spriteID: ee2f07f615a6f477fafb9e11e236845c
       vertices: []
       indices: 
       edges: []
@@ -197,8 +197,8 @@ TextureImporter:
       name: Bitty_idle_right_3
       rect:
         serializedVersion: 2
-        x: 386
-        y: 29
+        x: 387
+        y: 26
         width: 88
         height: 128
       alignment: 0
@@ -208,7 +208,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d8f7f907c5644bdcbda6f34d06735ab
+      spriteID: eed4863e637c74203adb314e40f14a43
       vertices: []
       indices: 
       edges: []
@@ -217,8 +217,8 @@ TextureImporter:
       name: Bitty_idle_right_4
       rect:
         serializedVersion: 2
-        x: 514
-        y: 29
+        x: 515
+        y: 26
         width: 88
         height: 128
       alignment: 0
@@ -228,7 +228,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db877b5b1cd2c41d4872c9c44178b68c
+      spriteID: 4ea4e395e40664f78aef10c7bd1ca2f0
       vertices: []
       indices: 
       edges: []
@@ -237,8 +237,8 @@ TextureImporter:
       name: Bitty_idle_right_5
       rect:
         serializedVersion: 2
-        x: 642
-        y: 29
+        x: 643
+        y: 26
         width: 88
         height: 128
       alignment: 0
@@ -248,7 +248,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e609949ce9b604849bc1e23594303cf3
+      spriteID: b47e9825525554e7790a7fa6b8dbe00d
       vertices: []
       indices: 
       edges: []
