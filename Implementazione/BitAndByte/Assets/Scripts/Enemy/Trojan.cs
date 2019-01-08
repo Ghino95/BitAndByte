@@ -16,7 +16,7 @@ public class Trojan : InterfaceDisable{
     private bool StartFlipX;
     private bool disable;
     private Coroutine Risveglio;
-    private bool Carica;
+    private TestTrojan Carica;
     private int Modificatore;
     public BoxCollider2D AngoloVisione;
     public BoxCollider2D ColliderTrojan;
@@ -24,6 +24,7 @@ public class Trojan : InterfaceDisable{
 
     private void Awake()
     {
+        Carica = GetComponentInChildren<TestTrojan>();
         rig = GetComponent<Rigidbody2D>();
         tr = GetComponent<Transform>();
         Sprite = GetComponent<SpriteRenderer>();
@@ -31,7 +32,6 @@ public class Trojan : InterfaceDisable{
         posX = tr.position.x;
         ObstacleLayer = LayerMask.GetMask("Player", "Default");
         disable = false;
-        Carica = false;
         Modificatore = Sprite.flipX ? -1 : 1;
         posXFinale = StartFlipX ? posX - (AngoloVisione.size.x + ColliderTrojan.size.x / 2) : posX + (AngoloVisione.size.x + ColliderTrojan.size.x / 2);
     }
@@ -40,7 +40,7 @@ public class Trojan : InterfaceDisable{
     {
         if (!disable)
         {
-            if (Carica && Mathf.Abs(tr.position.x - posXFinale) > 0.05f)
+            if (Carica.isCarica() && Mathf.Abs(tr.position.x - posXFinale) > 0.05f)
             {
                 Direzione = !Sprite.flipX ? tr.right : -tr.right;
                 rig.velocity = (Direzione).normalized * velocity;
@@ -48,8 +48,6 @@ public class Trojan : InterfaceDisable{
             {
 
                 Sprite.flipX = tr.position.x > posX;
-
-                //Sprite.flipX = !StartFlipX;
                 Modificatore = Sprite.flipX ? -1 : 1;
                 Direzione = !Sprite.flipX ? tr.right : -tr.right;
                 rig.velocity = (tr.right * (posX - tr.position.x)).normalized * velocity / 5;
@@ -92,20 +90,6 @@ public class Trojan : InterfaceDisable{
             StopCoroutine(Risveglio);
             Risveglio = null;
         }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            hit = Physics2D.Raycast(tr.position, collision.transform.position - tr.position, float.PositiveInfinity, ObstacleLayer);
-            Carica = hit.collider != null && hit.collider.gameObject == collision.gameObject;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        Carica &= !collision.CompareTag("Player");
     }
 
 

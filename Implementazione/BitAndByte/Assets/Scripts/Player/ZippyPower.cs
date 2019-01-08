@@ -11,10 +11,12 @@ public class ZippyPower : MonoBehaviour {
     private Transform tr;
     private float[] sizes;
     private RaycastHit2D hit;
+    private BoxCollider2D col;
     public AudioClip ZippyAudio;
 
     private void Awake()
     {
+        col = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
         count = 0;
         tr = GetComponent<Transform>();
@@ -58,11 +60,14 @@ public class ZippyPower : MonoBehaviour {
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Other = collision.gameObject;
+            if (col.bounds.center.y + col.bounds.extents.y >= collision.GetContact(0).point.y)
+            {
+                Other = collision.gameObject;
+            }
         }
     }
 

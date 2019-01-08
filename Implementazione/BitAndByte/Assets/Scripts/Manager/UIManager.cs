@@ -38,7 +38,4 @@ public class UIManager : MonoBehaviour {
         EventSystem.current.GetComponent<EventSystem>().SetSelectedGameObject(StartMenu);
     }
 
-
-
-
 }
