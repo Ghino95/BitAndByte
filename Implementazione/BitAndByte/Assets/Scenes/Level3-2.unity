@@ -6476,6 +6476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraMobile: {fileID: 775927162}
+  RuotaPersonaggi: {fileID: 1103615411}
   players:
   - {fileID: 28645532}
   - {fileID: 705317799}
@@ -6967,6 +6968,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7d40eb3cb63f4d52a619ce608d704d6, type: 3}
+--- !u!1 &1103615411 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 384890458, guid: d7d40eb3cb63f4d52a619ce608d704d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1103615410}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1154183421
 GameObject:
   m_ObjectHideFlags: 0

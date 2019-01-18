@@ -9310,7 +9310,7 @@ Tilemap:
   - first: {x: -17, y: 6, z: 0}
     second:
       m_TileIndex: 3
-      m_TileSpriteIndex: 3
+      m_TileSpriteIndex: 4
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -20766,10 +20766,10 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300028, guid: 3cd690ba54ee142c8b3290c17340f7d3, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300028, guid: 3cd690ba54ee142c8b3290c17340f7d3, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300082, guid: 3cd690ba54ee142c8b3290c17340f7d3, type: 3}
   - m_RefCount: 1
@@ -21400,40 +21400,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0751b8b313f54a91929c45aa6ce9b8f, type: 3}
---- !u!21 &383773294
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 2DxFX/Standard/GoldFX
-  m_Shader: {fileID: 4800000, guid: e119c2182318cab46b7ce5b0e7bc3e15, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _Alpha: 0
-    - _ColorMask: 15
-    - _Distortion: 0.1
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &409490851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22213,6 +22179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraMobile: {fileID: 409490852}
+  RuotaPersonaggi: {fileID: 1866193160}
   players:
   - {fileID: 333920007}
   - {fileID: 1447856501}
@@ -22284,6 +22251,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 570318df4d745414d89002cf7f2a7bc8, type: 3}
+--- !u!21 &1186139436
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 2DxFX/Standard/GoldFX
+  m_Shader: {fileID: 4800000, guid: e119c2182318cab46b7ce5b0e7bc3e15, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Alpha: 0
+    - _ColorMask: 15
+    - _Distortion: 0.1
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1236733678
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22779,7 +22780,7 @@ PrefabInstance:
     - target: {fileID: 212163859262149332, guid: 2562756fe82064925abc7408cb7c089f,
         type: 3}
       propertyPath: m_Color.a
-      value: 0.8
+      value: 0.5019608
       objectReference: {fileID: 0}
     - target: {fileID: 212163859262149332, guid: 2562756fe82064925abc7408cb7c089f,
         type: 3}
@@ -22841,6 +22842,38 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
       value: -0.06037855
+      objectReference: {fileID: 0}
+    - target: {fileID: 160001459, guid: 2562756fe82064925abc7408cb7c089f, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
+      value: -0.12345505
+      objectReference: {fileID: 0}
+    - target: {fileID: 160001459, guid: 2562756fe82064925abc7408cb7c089f, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
+      value: 0.85385895
+      objectReference: {fileID: 0}
+    - target: {fileID: 160001459, guid: 2562756fe82064925abc7408cb7c089f, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
+      value: -0.1312356
+      objectReference: {fileID: 0}
+    - target: {fileID: 160001459, guid: 2562756fe82064925abc7408cb7c089f, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
+      value: -0.6429486
+      objectReference: {fileID: 0}
+    - target: {fileID: 160001459, guid: 2562756fe82064925abc7408cb7c089f, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
+      value: 1.8240156
+      objectReference: {fileID: 0}
+    - target: {fileID: 160001459, guid: 2562756fe82064925abc7408cb7c089f, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
+      value: 0.2708602
+      objectReference: {fileID: 0}
+    - target: {fileID: 160001459, guid: 2562756fe82064925abc7408cb7c089f, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
+      value: -0.06670331
+      objectReference: {fileID: 0}
+    - target: {fileID: 160001459, guid: 2562756fe82064925abc7408cb7c089f, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
+      value: 1.8245678
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2562756fe82064925abc7408cb7c089f, type: 3}
@@ -23269,6 +23302,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7d40eb3cb63f4d52a619ce608d704d6, type: 3}
+--- !u!1 &1866193160 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 384890458, guid: d7d40eb3cb63f4d52a619ce608d704d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1866193159}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1874006405
 PrefabInstance:
   m_ObjectHideFlags: 0

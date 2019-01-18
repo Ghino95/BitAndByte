@@ -42,7 +42,8 @@ public class HUD : MonoBehaviour {
         EventManager.TriggerEvent("PausePlayer");
         WinScreen.SetActive(true);
         Blur.SetActive(true);
-        EventSystem.current.GetComponent<EventSystem>().SetSelectedGameObject(WinScreen.GetComponentsInChildren<UnityEngine.UI.Button>()[0].gameObject);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(WinScreen.GetComponentsInChildren<UnityEngine.UI.Button>()[0].gameObject);
         SoundManager.instance.StopBackgroundMusic();
         SoundManager.instance.StartEffectMusic(WinAudio);
     }
@@ -78,7 +79,8 @@ public class HUD : MonoBehaviour {
         EventManager.TriggerEvent("PausePlayer");
         MenuPause.SetActive(true);
         Blur.SetActive(true);
-        EventSystem.current.GetComponent<EventSystem>().SetSelectedGameObject(MenuPause.GetComponentsInChildren<UnityEngine.UI.Button>()[0].gameObject);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(MenuPause.GetComponentsInChildren<UnityEngine.UI.Button>()[0].gameObject);
     }
 
     private IEnumerator OpenMenuAfter()
@@ -86,7 +88,8 @@ public class HUD : MonoBehaviour {
         yield return new WaitForSecondsRealtime(0.2f);
         DeathScreen.SetActive(true);
         Blur.SetActive(true);
-        EventSystem.current.GetComponent<EventSystem>().SetSelectedGameObject(DeathScreen.GetComponentsInChildren<UnityEngine.UI.Button>()[0].gameObject);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(DeathScreen.GetComponentsInChildren<UnityEngine.UI.Button>()[0].gameObject);
         SoundManager.instance.StopBackgroundMusic();
         SoundManager.instance.StartEffectMusic(Error);
         yield return null;

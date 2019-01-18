@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.UI;
 
 public class ControllerManager: MonoBehaviour
 {
 
     public DeadzoneCamera CameraMobile;
+    public GameObject RuotaPersonaggi;
 
     public static ControllerManager instance
     {
@@ -13,23 +15,28 @@ public class ControllerManager: MonoBehaviour
         private set;
     }
 
+    public List<DisablePlayer> players;
+    public int playerEnable
+    {
+        get;
+        private set;
+    }
+
+
     private void Awake()
     {
         instance = this;
+        playerEnable = 0;
         EventManager.StartListening("PausePlayer", PausePlayer);
         EventManager.StartListening("ResumePlayer", ResumePlayer);
     }
+    
 
     private void OnDestroy()
     {
         EventManager.StopListening("PausePlayer", PausePlayer);
         EventManager.StopListening("ResumePlayer", ResumePlayer);
     }
-
-    public List<DisablePlayer> players;
-    private int playerEnable = 0;
-
-
 
     private void Start()
     {
@@ -38,21 +45,34 @@ public class ControllerManager: MonoBehaviour
         }
         players[playerEnable].Enable();
         CameraMobile.target = players[playerEnable].gameObject.GetComponent<Renderer>();
-        
+        RuotaPersonaggi.GetComponent<SelectPlayer>().SetUp(players);
+
     }
 
     private void Update()
     {
 
-        if(Input.GetButtonDown("Swap")){
+        /*if(Input.GetButtonDown("Swap")){
             ChangePlayer();
+        }*/
+        if (Input.GetButtonDown("Swap"))
+        {
+            Time.timeScale = 0;
+            players[playerEnable].Disable();
+            RuotaPersonaggi.SetActive(true);
         }
-        if(Input.GetButtonDown("Pause")){
+        if (Input.GetButtonUp("Swap"))
+        {
+            RuotaPersonaggi.SetActive(false);
+            Time.timeScale = 1;
+            players[playerEnable].Enable();
+        }
+        if (Input.GetButtonDown("Pause") && !RuotaPersonaggi.activeInHierarchy){
             EventManager.TriggerEvent("Pause");
         }
     }
 
-    private void ChangePlayer()
+    /*private void ChangePlayer()
     {
         players[playerEnable].Disable();
         do
@@ -61,6 +81,17 @@ public class ControllerManager: MonoBehaviour
         }while (!players[playerEnable].CompareTag("Player"));
         players[playerEnable].Enable();
         CameraMobile.target = players[playerEnable].gameObject.GetComponent<Renderer>();
+    }*/
+
+    public void ChangePlayer(int index)
+    {
+        if (index >= 0 && index < players.Count && players[index].CompareTag("Player"))
+        {
+            players[playerEnable].Disable();
+            playerEnable = index;
+            players[playerEnable].Enable();
+            CameraMobile.target = players[playerEnable].gameObject.GetComponent<Renderer>();
+        }
     }
 
     public void PausePlayer(){
@@ -72,5 +103,6 @@ public class ControllerManager: MonoBehaviour
         players[playerEnable].Enable();
         enabled = true;
     }
+
 
 }

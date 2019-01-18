@@ -4,22 +4,12 @@ using UnityEngine;
 
 public class Resident : InterfaceDisable {
 
-    public SpriteRenderer luce;
-    private bool active;
-
+    private ResidentLuce activeLuce;
     private Coroutine Risveglio;
 
     private void Awake()
     {
-        active = true;
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Player") && active)
-        {
-            EventManager.TriggerEvent("GameOver");
-        }
+        activeLuce = GetComponentInChildren<ResidentLuce>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -32,8 +22,7 @@ public class Resident : InterfaceDisable {
 
     public override void DisableVirus()
     {
-        luce.enabled = false;
-        active = false;
+        activeLuce.DisableLuce();
         if (Risveglio != null)
         {
             StopCoroutine(Risveglio);
@@ -52,8 +41,7 @@ public class Resident : InterfaceDisable {
 
     private IEnumerator Reactive(){
         yield return new WaitForSeconds(5.0f);
-        luce.enabled = true;
-        active = true;
+        activeLuce.ActiverLuce();
         Risveglio = null;
     }
 

@@ -11,7 +11,7 @@ public class Trojan : InterfaceDisable{
     private float posX;
     private float posXFinale;
     private SpriteRenderer Sprite;
-    private readonly float velocity = 5.0f;
+    private readonly float velocity = 8.0f;
     private Vector3 Direzione;
     private bool StartFlipX;
     private bool disable;
