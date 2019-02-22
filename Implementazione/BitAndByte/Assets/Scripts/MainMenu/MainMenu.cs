@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour {
     }
 
     public void OptionMenu(){
-        print("Option");
+        SceneManager.LoadScene("Credits");
     }
 
     public void ExitMenu()
