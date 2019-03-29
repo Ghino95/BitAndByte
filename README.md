@@ -1,5 +1,10 @@
 # BitAndByte
 
 
-##Link Design Document Google
-https://docs.google.com/document/d/17EEQqLiAy91Fycu1MD4PGT5WvBrTOLV0F3d0Sr2jEhU
+Gianluigi Oliva as Game Director and Lead Programmer
+
+Filippo Ghinelli as Game Designer, Level Designer and Sound Designer
+
+Leonardo Febbo as Level Designer
+
+Lucia Ferrari as Art Designer
