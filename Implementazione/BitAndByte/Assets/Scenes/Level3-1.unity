@@ -1541,7 +1541,12 @@ PrefabInstance:
     - target: {fileID: 114398347708466394, guid: cc1389e25dda947fe8cd5f10e7ac487f,
         type: 3}
       propertyPath: maxVelocity
-      value: 4
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114398347708466394, guid: cc1389e25dda947fe8cd5f10e7ac487f,
+        type: 3}
+      propertyPath: jumpForce
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc1389e25dda947fe8cd5f10e7ac487f, type: 3}
@@ -30157,37 +30162,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 212678385347565414, guid: de88e6b30919f4151ae8c8b7b63c2054,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300002, guid: 8b1477b10b767486882f49cc2982ac32,
-        type: 3}
-    - target: {fileID: 61119277340215406, guid: de88e6b30919f4151ae8c8b7b63c2054,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 61119277340215406, guid: de88e6b30919f4151ae8c8b7b63c2054,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 61119277340215406, guid: de88e6b30919f4151ae8c8b7b63c2054,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: -0.013315916
-      objectReference: {fileID: 0}
-    - target: {fileID: 61119277340215406, guid: de88e6b30919f4151ae8c8b7b63c2054,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.47969866
-      objectReference: {fileID: 0}
-    - target: {fileID: 114398347708466394, guid: de88e6b30919f4151ae8c8b7b63c2054,
-        type: 3}
-      propertyPath: maxVelocity
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4212640186245988, guid: de88e6b30919f4151ae8c8b7b63c2054, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.72
@@ -30219,6 +30193,42 @@ PrefabInstance:
     - target: {fileID: 4212640186245988, guid: de88e6b30919f4151ae8c8b7b63c2054, type: 3}
       propertyPath: m_RootOrder
       value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 114398347708466394, guid: de88e6b30919f4151ae8c8b7b63c2054,
+        type: 3}
+      propertyPath: maxVelocity
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114398347708466394, guid: de88e6b30919f4151ae8c8b7b63c2054,
+        type: 3}
+      propertyPath: jumpForce
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 212678385347565414, guid: de88e6b30919f4151ae8c8b7b63c2054,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300002, guid: 8b1477b10b767486882f49cc2982ac32,
+        type: 3}
+    - target: {fileID: 61119277340215406, guid: de88e6b30919f4151ae8c8b7b63c2054,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 61119277340215406, guid: de88e6b30919f4151ae8c8b7b63c2054,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61119277340215406, guid: de88e6b30919f4151ae8c8b7b63c2054,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.013315916
+      objectReference: {fileID: 0}
+    - target: {fileID: 61119277340215406, guid: de88e6b30919f4151ae8c8b7b63c2054,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.47969866
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de88e6b30919f4151ae8c8b7b63c2054, type: 3}
@@ -30286,6 +30296,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114907363942857628, guid: 2f002a347dcce43ee9c7cf4bd65ab22e,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1492328266}
+    - target: {fileID: 114907363942857628, guid: 2f002a347dcce43ee9c7cf4bd65ab22e,
+        type: 3}
+      propertyPath: limits.Array.data[0].width
+      value: 37
+      objectReference: {fileID: 0}
+    - target: {fileID: 114907363942857628, guid: 2f002a347dcce43ee9c7cf4bd65ab22e,
+        type: 3}
+      propertyPath: limits.Array.data[0].x
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114907363942857628, guid: 2f002a347dcce43ee9c7cf4bd65ab22e,
+        type: 3}
+      propertyPath: limits.Array.data[0].height
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 20863145856948768, guid: 2f002a347dcce43ee9c7cf4bd65ab22e,
+        type: 3}
+      propertyPath: orthographic size
+      value: 8.399805
+      objectReference: {fileID: 0}
     - target: {fileID: 4546982176905296, guid: 2f002a347dcce43ee9c7cf4bd65ab22e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.7169342
@@ -30317,31 +30352,6 @@ PrefabInstance:
     - target: {fileID: 4546982176905296, guid: 2f002a347dcce43ee9c7cf4bd65ab22e, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114907363942857628, guid: 2f002a347dcce43ee9c7cf4bd65ab22e,
-        type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 1492328266}
-    - target: {fileID: 114907363942857628, guid: 2f002a347dcce43ee9c7cf4bd65ab22e,
-        type: 3}
-      propertyPath: limits.Array.data[0].width
-      value: 37
-      objectReference: {fileID: 0}
-    - target: {fileID: 114907363942857628, guid: 2f002a347dcce43ee9c7cf4bd65ab22e,
-        type: 3}
-      propertyPath: limits.Array.data[0].x
-      value: -20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114907363942857628, guid: 2f002a347dcce43ee9c7cf4bd65ab22e,
-        type: 3}
-      propertyPath: limits.Array.data[0].height
-      value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 20863145856948768, guid: 2f002a347dcce43ee9c7cf4bd65ab22e,
-        type: 3}
-      propertyPath: orthographic size
-      value: 8.399805
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f002a347dcce43ee9c7cf4bd65ab22e, type: 3}
@@ -30677,7 +30687,12 @@ PrefabInstance:
     - target: {fileID: 114234717547366590, guid: b7593fff715b04c6bbfe89c783863f1b,
         type: 3}
       propertyPath: maxVelocity
-      value: 4
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114234717547366590, guid: b7593fff715b04c6bbfe89c783863f1b,
+        type: 3}
+      propertyPath: jumpForce
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7593fff715b04c6bbfe89c783863f1b, type: 3}
@@ -30699,40 +30714,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1627771971}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1658472526
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 2DxFX/Standard/GoldFX
-  m_Shader: {fileID: 4800000, guid: e119c2182318cab46b7ce5b0e7bc3e15, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _Alpha: 0
-    - _ColorMask: 15
-    - _Distortion: 0.1
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1807590716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30890,6 +30871,40 @@ PrefabInstance:
       objectReference: {fileID: 864650342}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eec05d3c2cdac4f41bf34c421de71e5b, type: 3}
+--- !u!21 &1897455045
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 2DxFX/Standard/GoldFX
+  m_Shader: {fileID: 4800000, guid: e119c2182318cab46b7ce5b0e7bc3e15, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Alpha: 0
+    - _ColorMask: 15
+    - _Distortion: 0.1
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1924547212
 GameObject:
   m_ObjectHideFlags: 0

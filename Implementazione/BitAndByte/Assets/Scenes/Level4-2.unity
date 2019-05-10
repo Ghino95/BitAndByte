@@ -26964,7 +26964,12 @@ PrefabInstance:
     - target: {fileID: 114398347708466394, guid: de88e6b30919f4151ae8c8b7b63c2054,
         type: 3}
       propertyPath: maxVelocity
-      value: 4
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114398347708466394, guid: de88e6b30919f4151ae8c8b7b63c2054,
+        type: 3}
+      propertyPath: jumpForce
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1658791735184152, guid: de88e6b30919f4151ae8c8b7b63c2054, type: 3}
       propertyPath: m_TagString

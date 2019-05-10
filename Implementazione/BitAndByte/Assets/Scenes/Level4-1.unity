@@ -551,7 +551,12 @@ PrefabInstance:
     - target: {fileID: 114234717547366590, guid: b7593fff715b04c6bbfe89c783863f1b,
         type: 3}
       propertyPath: maxVelocity
-      value: 4
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114234717547366590, guid: b7593fff715b04c6bbfe89c783863f1b,
+        type: 3}
+      propertyPath: jumpForce
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7593fff715b04c6bbfe89c783863f1b, type: 3}
@@ -1406,7 +1411,12 @@ PrefabInstance:
     - target: {fileID: 114867487311931278, guid: 7fc00465cb2bd44dcaeba0c4c97c222e,
         type: 3}
       propertyPath: maxVelocity
-      value: 4
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114867487311931278, guid: 7fc00465cb2bd44dcaeba0c4c97c222e,
+        type: 3}
+      propertyPath: jumpForce
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fc00465cb2bd44dcaeba0c4c97c222e, type: 3}
@@ -28638,7 +28648,12 @@ PrefabInstance:
     - target: {fileID: 114398347708466394, guid: cc1389e25dda947fe8cd5f10e7ac487f,
         type: 3}
       propertyPath: maxVelocity
-      value: 4
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114398347708466394, guid: cc1389e25dda947fe8cd5f10e7ac487f,
+        type: 3}
+      propertyPath: jumpForce
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc1389e25dda947fe8cd5f10e7ac487f, type: 3}
@@ -28654,40 +28669,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0f9b5fa17e14adab1be95a843cd6bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!21 &1184007103
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 2DxFX/Standard/GoldFX
-  m_Shader: {fileID: 4800000, guid: e119c2182318cab46b7ce5b0e7bc3e15, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _Alpha: 0
-    - _ColorMask: 15
-    - _Distortion: 0.1
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1238997958
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29161,11 +29142,6 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114266551092466782, guid: 28cf4528635734619b9d19c75582e557,
-        type: 3}
-      propertyPath: MaxDistanza
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 61857424038924512, guid: 28cf4528635734619b9d19c75582e557,
         type: 3}
       propertyPath: m_Offset.x
@@ -29201,6 +29177,11 @@ PrefabInstance:
     - target: {fileID: 1938848609, guid: 28cf4528635734619b9d19c75582e557, type: 3}
       propertyPath: m_Size.y
       value: 2.114671
+      objectReference: {fileID: 0}
+    - target: {fileID: 114266551092466782, guid: 28cf4528635734619b9d19c75582e557,
+        type: 3}
+      propertyPath: MaxDistanza
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28cf4528635734619b9d19c75582e557, type: 3}
@@ -29270,6 +29251,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 361b345a8c239438ab798e31258f0f06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!21 &1598989837
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 2DxFX/Standard/GoldFX
+  m_Shader: {fileID: 4800000, guid: e119c2182318cab46b7ce5b0e7bc3e15, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Alpha: 0
+    - _ColorMask: 15
+    - _Distortion: 0.1
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1786150185
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29312,7 +29327,12 @@ PrefabInstance:
     - target: {fileID: 114398347708466394, guid: de88e6b30919f4151ae8c8b7b63c2054,
         type: 3}
       propertyPath: maxVelocity
-      value: 4
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114398347708466394, guid: de88e6b30919f4151ae8c8b7b63c2054,
+        type: 3}
+      propertyPath: jumpForce
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de88e6b30919f4151ae8c8b7b63c2054, type: 3}
@@ -29341,6 +29361,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114907363942857628, guid: 2f002a347dcce43ee9c7cf4bd65ab22e,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1786150187}
+    - target: {fileID: 114907363942857628, guid: 2f002a347dcce43ee9c7cf4bd65ab22e,
+        type: 3}
+      propertyPath: limits.Array.data[0].width
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114907363942857628, guid: 2f002a347dcce43ee9c7cf4bd65ab22e,
+        type: 3}
+      propertyPath: limits.Array.data[0].x
+      value: -18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114907363942857628, guid: 2f002a347dcce43ee9c7cf4bd65ab22e,
+        type: 3}
+      propertyPath: limits.Array.data[0].height
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 114907363942857628, guid: 2f002a347dcce43ee9c7cf4bd65ab22e,
+        type: 3}
+      propertyPath: limits.Array.data[0].y
+      value: -22
+      objectReference: {fileID: 0}
+    - target: {fileID: 20863145856948768, guid: 2f002a347dcce43ee9c7cf4bd65ab22e,
+        type: 3}
+      propertyPath: orthographic size
+      value: 8.456792
+      objectReference: {fileID: 0}
     - target: {fileID: 4546982176905296, guid: 2f002a347dcce43ee9c7cf4bd65ab22e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.93
@@ -29372,36 +29422,6 @@ PrefabInstance:
     - target: {fileID: 4546982176905296, guid: 2f002a347dcce43ee9c7cf4bd65ab22e, type: 3}
       propertyPath: m_RootOrder
       value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 114907363942857628, guid: 2f002a347dcce43ee9c7cf4bd65ab22e,
-        type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 1786150187}
-    - target: {fileID: 114907363942857628, guid: 2f002a347dcce43ee9c7cf4bd65ab22e,
-        type: 3}
-      propertyPath: limits.Array.data[0].width
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 114907363942857628, guid: 2f002a347dcce43ee9c7cf4bd65ab22e,
-        type: 3}
-      propertyPath: limits.Array.data[0].x
-      value: -18
-      objectReference: {fileID: 0}
-    - target: {fileID: 114907363942857628, guid: 2f002a347dcce43ee9c7cf4bd65ab22e,
-        type: 3}
-      propertyPath: limits.Array.data[0].height
-      value: 36
-      objectReference: {fileID: 0}
-    - target: {fileID: 114907363942857628, guid: 2f002a347dcce43ee9c7cf4bd65ab22e,
-        type: 3}
-      propertyPath: limits.Array.data[0].y
-      value: -22
-      objectReference: {fileID: 0}
-    - target: {fileID: 20863145856948768, guid: 2f002a347dcce43ee9c7cf4bd65ab22e,
-        type: 3}
-      propertyPath: orthographic size
-      value: 8.456792
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f002a347dcce43ee9c7cf4bd65ab22e, type: 3}
