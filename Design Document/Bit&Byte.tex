@@ -75,20 +75,9 @@ The principal mechanic of this game is the cooperation between the characters us
 These are the basic skills and mechanics for all the characters that the player can control:
 \begin{itemize}
 	\item \textbf{Walk}: The basic movement action of the characters. It gives a sense of mass and gravity, without slowing down movement.
-	\item \textbf{Jump}: The character is able to jump but it can be possible to change direction while in air, and gravity is treated like in the real world. Like for the action of walking, a sense of mass and weight is present. 
+	\item \textbf{Jump}: The character is able to jump but it can be possible to change direction while in air, and gravity is treated like in the real world. Like for the action of walking, a sense of mass and weight is present. A character can jump over every object or character (if they are enemies or hazards it will lead to a game over) and the maximum height of the jump is equal to 2 times the main character height.
 	\item \textbf{Interacting} with levers, buttons and boxes: The character is able to interact with predefined machineries and levers to make something happen within a level.
 \end{itemize}
-
-Level failure can be caused by:
-\begin{itemize}
-	\item being detected from a "Resident",
-	\item going through a laser sensor,
-	\item being hitted from an enemy,
-	\item touching an enemy,
-	\item falling in traps.
-\end{itemize}
-This is valid for all the characters and in any moment.
-
 
 
 \section*{Character’s skills}
@@ -96,14 +85,14 @@ Each character has a unique skill which can be used in different ways to solve a
 \begin{itemize}
 	\item \textbf{Bitty}: the protagonist and the starting character of the game, he can collect one bit at a time and fire it in the direction he’s facing. The bits can be used to get rid of Spywares and to activate switches.
 	\item \textbf{Shieldy}: a program who can stun Viruses from behind. This ability can be turned on or off and covers a circular area around the 				character. A Virus will remain stunned as long as it remains within the area of effect, otherwise it will come to its senses after 5 seconds.
-	\item \textbf{Zippy}:  a program who can shrink himself horizontally or vertically, gaining respectively height or width. He can also shrink allies if they are near him, but only vertically.
-	\item \textbf{Gimpy}: a program who can camouflage herself to avoid being seen from enemies but he is still tangible.
+	\item \textbf{Zippy}:  a program who can shrink himself horizontally or vertically, gaining respectively height or width. He can also shrink allies if they are near him, but only vertically. Zippy's maximum height is 1,5 times the height of the main character, while the minimum height for Zippy and the other characters is half of the height of the main character.
+	\item \textbf{Gimpy}: a program who can camouflage herself to avoid being seen from enemies but he is still tangible. This ability can be turned on or off.
 \end{itemize}
 
 \section*{Viruses' skills}
 There are different Virus enemies in the game, each one representing a different kind of computer virus. Each enemy has a particular feature and behaviour:
 \begin{itemize}
-	\item \textbf{Resident}: The Resident is a sentinel with a very wide field of vision. If he identifies the player he launches an alarm that leads to the game 		over. This enemy stays still, it is dangerous only if the player touches it.
+	\item \textbf{Resident}: The Resident is a sentinel with a very wide field of vision. If he identifies the player he launches an alarm that leads to the game 		over. This enemy stays still, but it is dangerous if the player touches it.
 	\item \textbf{Trojan}: The Trojan is an enemy which protects a specific area in a level. If he spots the player,it will charge towards him at high speed. If it misses, it will turn back to its original position.
 	\item \textbf{Spyware}: The Spyware is an enemy hanging from the ceiling that moves from top to bottom. It is harmless until the player walks below it: it will then drop down incredibly fast and most certainly catch the player.
 	\item \textbf{Worm}: The Worm is a very large and heavy enemy, almost impossible to move or neutralize. He blocks the way, preventing progress through the level.
@@ -111,12 +100,6 @@ There are different Virus enemies in the game, each one representing a different
 	\item \textbf{Keylogger}: An enemy which mimics exactly the movements of a character.
 \end{itemize}
 
-
-
-
-\section*{Camera}
-
-Since the game is based on the resolution of the puzzles, the camera will show a large portion of the environment in a way to have on the screen most of the elements needed to solve the puzzles. The camera is centered on the active character and will move smoothly if the character is switched.
 
 \section*{Hazards}
 Viruses are not the only thing that the player should be careful of in order not to suffer a game over.
@@ -135,6 +118,21 @@ The principal mechanisms in a level are:
 	\item \textbf{Barriers/Gates}: They are used to make inaccessible some areas. By activating a button they can be deactivated or opened.
 	\item \textbf{Terminal}: They are switches with an “on” and “off” state. For example, the player can change the direction of a laser by using a terminal.
 \end{itemize}
+
+\section*{Game Over}
+Level failure can be caused by:
+\begin{itemize}
+	\item being detected from a "Resident",
+	\item going through a laser sensor,
+	\item being hitted from an enemy,
+	\item touching an enemy,
+	\item falling in traps.
+\end{itemize}
+This is valid for all the characters and in any moment.
+
+
+\section*{Camera}
+Since the game is based on the resolution of the puzzles, the camera will show a large portion of the environment in a way to have on the screen most of the elements needed to solve the puzzles. The camera is centered on the active character and will move smoothly if the character is switched.
 
 \section*{Control System}
 The in-game movement, like most of the puzzles, is physics-based. The control system also takes care of the changing of the controlled character ensuring that at any time the player can use only one character at a time. To make the player understand which character he is controlling in a precise moment, the system activates an UI indicator.
